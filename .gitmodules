@@ -1,0 +1,3 @@
+[submodule "public/bitcamp-brand"]
+	path = public/bitcamp-brand
+	url = https://github.com/bitcamp/bitcamp-brand/

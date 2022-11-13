@@ -1,0 +1,165 @@
+:root {
+  /* Primary */
+  --color-bitcamp: #ff6f3f;
+  --color-midnight: #1a2e33;
+  --color-shell: #ebeae6;
+  --color-white: #ffffff;
+
+  /* Secondary */
+  --color-soil: #7f6c5f;
+  --color-bark: #a58d7c;
+  --color-sand: #e5d8ce;
+  --color-flame: #ff3f46;
+  --color-mango: #ffaf3f;
+  --color-lemon: #ffef3f;
+  --color-creamsicle: #fde8e1;
+  --color-atlantic: #528ca5;
+  --color-sky: #cbf2ff;
+}
+
+/* FONTS */
+
+/* Avenir */
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Light.otf") format("opentype");
+
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Book.otf") format("opentype");
+
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Roman.otf") format("opentype");
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Medium.otf") format("opentype");
+
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Heavy.otf") format("opentype");
+
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Black.otf") format("opentype");
+
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Light.otf") format("opentype");
+
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-BookOblique.otf") format("opentype");
+
+  font-weight: 350;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-Oblique.otf") format("opentype");
+
+  font-weight: 400;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-MediumOblique.otf") format("opentype");
+
+  font-weight: 500;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-HeavyOblique.otf") format("opentype");
+
+  font-weight: 700;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir/AvenirLTStd-BlackOblique.otf") format("opentype");
+
+  font-weight: 900;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-Light.ttf") format("opentype");
+
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-Regular.ttf") format("opentype");
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-Bold.ttf") format("opentype");
+
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-LightItalic.ttf") format("opentype");
+
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-Italic.ttf") format("opentype");
+
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/aleo/Aleo-BoldItalic.ttf") format("opentype");
+
+  font-weight: 700;
+  font-style: italic;
+}
