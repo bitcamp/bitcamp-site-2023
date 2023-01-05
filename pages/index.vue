@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <HelloWorld />
+    <Button link="" />
   </div>
 </template>
 
