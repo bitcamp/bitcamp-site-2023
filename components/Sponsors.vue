@@ -32,15 +32,15 @@ export default {
         'Clark School of Engineering',
       ] as const,
       tiers: {
-        'CMNS': 'Custom',
+        CMNS: 'Custom',
         'UMD CS Department': 'Custom',
-        'UMIACS': 'Custom',
+        UMIACS: 'Custom',
         'Clark School of Engineering': 'Custom',
       },
       urls: {
-        'CMNS': 'https://cmns.umd.edu/',
+        CMNS: 'https://cmns.umd.edu/',
         'UMD CS Department': 'https://www.cs.umd.edu/',
-        'UMIACS': 'https://www.umiacs.umd.edu/',
+        UMIACS: 'https://www.umiacs.umd.edu/',
         'Clark School of Engineering': 'https://eng.umd.edu/',
       },
     };
@@ -51,7 +51,7 @@ export default {
 <style scoped>
 #sponsors {
   margin: 0 auto;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
 }
 
 .sponsor-container {

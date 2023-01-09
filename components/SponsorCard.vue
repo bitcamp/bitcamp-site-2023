@@ -14,7 +14,7 @@ export default {
     },
     tier: {
       type: String,
-      required: true
+      required: true,
     },
     url: {
       type: String,
@@ -25,12 +25,10 @@ export default {
 </script>
 
 <style scoped>
-
 .sponsor-logo {
   width: auto;
   text-align: center;
 }
-
 
 .sponsor-logo img {
   width: 20rem;
@@ -39,7 +37,6 @@ export default {
   object-fit: contain;
   transition: transform 300ms ease-in-out;
 }
-
 
 .sponsor-logo:hover img {
   transform: scale(1.1);
