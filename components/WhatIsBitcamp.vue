@@ -1,5 +1,5 @@
 <template>
-  <div class="information">
+  <div class="what-is-bc">
     <div class="bc-description">
       <h2>What is Bitcamp?</h2>
       <div class="descriptors">
@@ -7,15 +7,15 @@
       </div>
       <p>{{ textBlurb }}</p>
     </div>
-    <div class="information-image">
-      <img :src="image" alt="information image" />
+    <div class="bc-info-image">
+      <img :src="image" alt="Bitcamp information image" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'InformationSection',
+  name: 'WhatIsBitcampSection',
   props: {
     textBlurb: {
       type: String,
@@ -30,48 +30,43 @@ export default {
 </script>
 
 <style>
-.information {
+.what-is-bc {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 .bc-description {
   flex: 1;
   line-height: 1.5;
   text-align: center;
   padding: 0 10%;
 }
-
 .bc-description h2 {
   margin-bottom: 0;
 }
-
 .bc-description .descriptors {
   margin-top: 0;
   color: var(--color-bitcamp);
 }
-
-.information-image {
+.bc-info-image {
   flex: 1;
   text-align: center;
   padding: 5% 5%;
 }
-.information-image img {
+.bc-info-image img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
-
 @media (max-width: 992px) {
-  .information {
+  .what-is-bc {
     flex-direction: column;
   }
   .bc-description {
     text-align: center;
     padding: 2rem 3rem;
   }
-  .information-image {
+  .bc-info-image {
     text-align: center;
     padding: 2rem;
   }
