@@ -1,5 +1,5 @@
 <template>
-  <div>Hello world!</div>
+  <Hero link="https://wallpaper.dog/large/20559804.jpg" />
 </template>
 
 <script setup lang="ts"></script>
