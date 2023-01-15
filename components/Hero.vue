@@ -1,7 +1,7 @@
 <template>
     <section id="hero">
     <div class="hero">
-        <img :src="link" />
+        <img src="~/assets/images/hero.jpg" />
         <div class="hero-text">
             <h1>I am John Doe</h1>
         </div>
@@ -23,7 +23,6 @@ defineProps<{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    // background-image: url('../assets/images/hero.jpg');
 }
 .hero img {
   width: 100%;
