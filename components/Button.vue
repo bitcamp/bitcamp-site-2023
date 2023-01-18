@@ -1,8 +1,4 @@
 <template>
-  <link
-    href="https://fonts.googleapis.com/css?family=Poppins"
-    rel="stylesheet"
-  />
   <button
     :class="[
       primary
@@ -21,6 +17,12 @@
     {{ text }}
   </button>
 </template>
+
+<script lang="ts">
+export default {
+  name: 'ButtonComponent',
+};
+</script>
 
 <script setup lang="ts">
 export interface Props {
@@ -51,7 +53,7 @@ withDefaults(defineProps<Props>(), {
 
   border-radius: 10px;
 
-  font-family: 'Poppins';
+  font-family: 'Avenir';
   font-style: normal;
   font-weight: 500;
   /* identical to box height */
