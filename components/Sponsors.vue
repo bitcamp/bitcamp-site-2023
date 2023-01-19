@@ -18,34 +18,30 @@
   </section>
 </template>
 
-<script lang="ts">
-import SponsorCard from '~/components/SponsorCard.vue';
-export default {
-  name: 'Sponsors',
-  components: { SponsorCard },
-  data() {
-    return {
-      names: [
-        'CMNS',
-        'UMD CS Department',
-        'UMIACS',
-        'Clark School of Engineering',
-      ] as const,
-      tiers: {
-        CMNS: 'Custom',
-        'UMD CS Department': 'Custom',
-        UMIACS: 'Custom',
-        'Clark School of Engineering': 'Custom',
-      },
-      urls: {
-        CMNS: 'https://cmns.umd.edu/',
-        'UMD CS Department': 'https://www.cs.umd.edu/',
-        UMIACS: 'https://www.umiacs.umd.edu/',
-        'Clark School of Engineering': 'https://eng.umd.edu/',
-      },
-    };
-  },
-};
+<script setup lang="ts">
+import { ref } from 'vue';
+import SponsorCard from './SponsorCard.vue';
+
+const names = ref<string[]>([
+  'CMNS',
+  'UMD CS Department',
+  'UMIACS',
+  'Clark School of Engineering',
+]);
+
+const tiers = reactive({
+  'CMNS': 'Custom',
+  'UMD CS Department': 'Custom',
+  'UMIACS': 'Custom',
+  'Clark School of Engineering': 'Custom',
+});
+
+const urls = reactive({
+  'CMNS': 'https://cmns.umd.edu/',
+  'UMD CS Department': 'https://www.cs.umd.edu/',
+  'UMIACS': 'https://www.umiacs.umd.edu/',
+  'Clark School of Engineering': 'https://eng.umd.edu/',
+});
 </script>
 
 <style scoped>
@@ -57,12 +53,10 @@ export default {
 .sponsor-container {
   background-color: var(--color-foreground);
   border-radius: var(--border-radius);
-  column-gap: 20px;
   margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
 }
 
 .call-to-action {
@@ -75,20 +69,14 @@ export default {
 .section-title {
   margin: 0 auto;
   width: 60%;
-  min-width: 300px;
   padding: 1rem;
   text-align: center;
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 900px) {
   .sponsor-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
   }
 }
 </style>
