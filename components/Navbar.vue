@@ -1,0 +1,249 @@
+<template>
+
+    <header>
+        <nav>
+            <div id="logo-container">
+                <a tag="img" href="/">
+                    <img src="~/public/bitcamp-brand/logos/logotype.png" id="logo-image" />
+                </a>
+            </div>
+            <div class="hamburgerContainer" @click="verticalDropDown">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <ul class="nav-pages">
+                <li class="page">
+                    <a href="/our-mission">Our Mission</a>
+                </li>
+                <li class="page">
+                    <a href="/tracks">Tracks</a>
+                </li>
+                <li class="dropdown-page">
+                    <a href="/mini-events" class="dropdown-text">Mini Events</a>
+                    <div class="dropdown-elements-container">
+                        <ul class="dropdown-elements">
+                            <li>
+                                <a href="/mini-events/event1">Value</a>
+                            </li>
+                            <li>
+                                <a href="/mini-events/event2">Value</a>
+                            </li>
+                            <li>
+                                <a href="/mini-events/event3">Value</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="page">
+                    <a href="/campfire-games">Campfire Games</a>
+                </li>
+                <li class="page">
+                    <a href="/schedule">Schedule</a>
+                </li>
+                <li class="page">
+                    <a href="/faq">FAQ</a>
+                </li>
+                <li class="page">
+                    <a href="/sponsors">Sponsors</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="divider">
+        </div>
+    </header>
+
+
+
+    <div>
+        <slot />
+    </div>
+
+</template>
+
+<script setup lang="ts">
+function verticalDropDown() {
+
+}
+</script>
+
+<style scoped lang="scss">
+$bitcamp: var(--color-bitcamp);
+$mango: var(--color-mango);
+
+
+
+
+header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
+
+nav {
+    position: relative;
+    margin: 1vw;
+    font-size: 1.25vw;
+    font-family: Aleo;
+}
+
+#logo-container {
+    position: absolute;
+    margin-left: 1%;
+    height: 100%;
+    width: 20vw;
+
+}
+
+#logo-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.nav-pages {
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-pages li {
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+
+    :hover {
+        color: $mango;
+        text-decoration: underline;
+    }
+}
+
+.nav-pages li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.divider {
+    background-image: linear-gradient(180deg, lightgray, white);
+    position: relative;
+    padding: 0.2%;
+    width: auto;
+}
+
+.dropdown-page {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-content: flex-start;
+}
+
+
+.dropdown-page:hover .dropdown-elements-container {
+    display: flex;
+}
+
+.dropdown-elements-container {
+    display: none;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.dropdown-elements {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-end;
+    position: absolute;
+    border: 0.1vw solid gray;
+    border-radius: 10%;
+    z-index: 1;
+    background: white;
+    height: fit-content;
+
+
+    font-family: Avenir;
+
+    width: 130%;
+    position: absolute;
+    text-decoration: none !important;
+}
+
+
+.dropdown-page:hover .dropdown-text {
+    color: $mango;
+    text-decoration: underline;
+}
+
+.dropdown-elements li {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    width: 90%;
+    font-size: 0.6rem;
+    margin: 4%;
+}
+
+.dropdown-elements li a {
+    width: 100%;
+    padding: 2%;
+}
+
+.dropdown-elements li:hover a {
+    background-color: rgba(#ff6f3f, 0.3);
+    color: $bitcamp;
+    border-radius: 0.5rem;
+    width: 100%;
+    text-decoration: none;
+}
+
+.hamburgerContainer {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #logo-container {
+        position: relative;
+    }
+
+    .nav-pages {
+        display: none;
+    }
+
+    .hamburgerContainer {
+        position: relative;
+        display: flex;
+        right: 0;
+        align-items: flex-end;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 5vw;
+        height: 0.75vw;
+        margin: 0.5vw 0vw;
+        border-radius: 1rem;
+        background-color: $bitcamp;
+    }
+
+}
+</style>
+
