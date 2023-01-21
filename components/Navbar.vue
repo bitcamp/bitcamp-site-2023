@@ -2,16 +2,20 @@
 
     <header>
         <nav>
-            <div id="logo-container">
-                <a tag="img" href="/">
-                    <img src="~/public/bitcamp-brand/logos/logotype.png" id="logo-image" />
-                </a>
+            <div class="non-pages">
+                <div id="logo-container">
+                    <a tag="img" href="/">
+                        <img src="~/public/bitcamp-brand/logos/logotype.png" id="logo-image" />
+                    </a>
+                </div>
+                <div class="hamburgerContainer">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
             </div>
-            <div class="hamburgerContainer" @click="verticalDropDown">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
+
 
             <ul class="nav-pages">
                 <li class="page">
@@ -52,6 +56,7 @@
         </nav>
         <div class="divider">
         </div>
+
     </header>
 
 
@@ -63,9 +68,7 @@
 </template>
 
 <script setup lang="ts">
-function verticalDropDown() {
 
-}
 </script>
 
 <style scoped lang="scss">
@@ -80,6 +83,7 @@ header {
     padding: 0;
     border: 0;
     width: 100%;
+    background-color: white;
 }
 
 nav {
@@ -127,7 +131,7 @@ nav {
     font-size: 1.2rem;
 }
 
-.divider {
+.divider-large-screen {
     background-image: linear-gradient(180deg, lightgray, white);
     position: relative;
     padding: 0.2%;
@@ -153,6 +157,7 @@ nav {
     width: 100%;
     position: relative;
     background-color: white;
+    text-decoration: none !important;
 }
 
 .dropdown-elements {
@@ -166,10 +171,7 @@ nav {
     z-index: 1;
     background: white;
     height: fit-content;
-
-
     font-family: Avenir;
-
     width: 130%;
     position: absolute;
     text-decoration: none !important;
@@ -189,6 +191,7 @@ nav {
     width: 90%;
     font-size: 0.6rem;
     margin: 4%;
+
 }
 
 .dropdown-elements li a {
@@ -201,37 +204,78 @@ nav {
     color: $bitcamp;
     border-radius: 0.5rem;
     width: 100%;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .hamburgerContainer {
     display: none;
 }
 
+.divider {
+    background-image: linear-gradient(180deg, lightgray, white);
+    position: relative;
+    padding: 0.2%;
+    width: auto;
+}
+
 @media only screen and (max-width: 800px) {
 
     nav {
         display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    non-pages {
+        display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 
     #logo-container {
-        position: relative;
+        position: absolute;
     }
 
     .nav-pages {
-        display: none;
+        margin-left: 1vw;
+        width: 100%;
+        background-color: white;
+        position: relative;
+        flex-direction: column;
+        align-self: flex-start;
+        align-items: flex-start;
     }
+
+    .nav-pages li {
+        margin-top: 1vw;
+    }
+
 
     .hamburgerContainer {
         position: relative;
         display: flex;
-        right: 0;
+        margin-right: 1vw;
         align-items: flex-end;
         flex-direction: column;
         cursor: pointer;
+    }
+
+    .dropdown-elements {
+        align-self: flex-start;
+        margin-left: 2vw;
+        position: relative;
+        border: none;
+    }
+
+
+
+
+    .dropdown-elements li {
+        margin: 2%;
+    }
+
+    .dropdown-elements li:hover a {
+        background-color: white;
     }
 
     .bar1,
@@ -242,6 +286,10 @@ nav {
         margin: 0.5vw 0vw;
         border-radius: 1rem;
         background-color: $bitcamp;
+    }
+
+    .divider {
+        display: none;
     }
 
 }
