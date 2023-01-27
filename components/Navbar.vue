@@ -5,19 +5,22 @@
             <div class="non-pages">
                 <div id="logo-container">
                     <a tag="img" href="/">
-                        <img src="~/public/bitcamp-brand/logos/logotype.png" id="logo-image" />
+                        <img src="~/public/bitcamp-brand/logos/logotype.png" id="logo-with-text">
+                        <img src="~/public/bitcamp-brand/logos/bitcamp.png" id="logo-image">
                     </a>
                 </div>
                 <div class="hamburgerContainer">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+                    <div @click="toggleDropdown" class="hamburgerBars">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
                 </div>
 
             </div>
 
 
-            <ul class="nav-pages">
+            <ul v-if="showDropdown || bigScreen" class="nav-pages">
                 <li class="page">
                     <a href="/our-mission">Our Mission</a>
                 </li>
@@ -53,6 +56,7 @@
                     <a href="/sponsors">Sponsors</a>
                 </li>
             </ul>
+
         </nav>
         <div class="divider">
         </div>
@@ -68,15 +72,44 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 
+const showDropdown = ref(false);
+const bigScreen = ref(false);
+
+onMounted(() => {
+    const startSize = window.innerWidth;
+    if (startSize > 992) {
+        bigScreen.value = true;
+    } else {
+        bigScreen.value = false;
+    }
+    window.addEventListener("resize", onresize);
+})
+
+onUnmounted(() => {
+    window.removeEventListener("resize", onresize);
+})
+
+function onresize() {
+    const screenSize = window.innerWidth;
+
+    if (screenSize <= 992) {
+        bigScreen.value = false;
+    } else {
+        bigScreen.value = true;
+        showDropdown.value = false;
+    }
+}
+
+function toggleDropdown() {
+    showDropdown.value = !showDropdown.value;
+}
 </script>
 
 <style scoped lang="scss">
 $bitcamp: var(--color-bitcamp);
 $mango: var(--color-mango);
-
-
-
 
 header {
     margin: 0;
@@ -97,14 +130,17 @@ nav {
     position: absolute;
     margin-left: 1%;
     height: 100%;
-    width: 20vw;
-
+    width: 100%;
 }
 
-#logo-image {
+#logo-with-text {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
+}
+
+#logo-image {
+    display: none;
 }
 
 .nav-pages {
@@ -118,6 +154,7 @@ nav {
     display: flex;
     align-items: center;
     text-decoration: none !important;
+    z-index: 3;
 
     :hover {
         color: $mango;
@@ -177,7 +214,6 @@ nav {
     text-decoration: none !important;
 }
 
-
 .dropdown-page:hover .dropdown-text {
     color: $mango;
     text-decoration: underline;
@@ -218,7 +254,7 @@ nav {
     width: auto;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 992px) {
 
     nav {
         display: flex;
@@ -232,8 +268,15 @@ nav {
         flex-direction: row;
     }
 
-    #logo-container {
-        position: absolute;
+    #logo-with-text {
+        display: none;
+        position: relative;
+    }
+
+    #logo-image {
+        display: block;
+        max-width: 100%;
+        max-height: 5vw;
     }
 
     .nav-pages {
@@ -250,12 +293,16 @@ nav {
         margin-top: 1vw;
     }
 
-
     .hamburgerContainer {
         position: relative;
         display: flex;
         margin-right: 1vw;
         align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .hamburgerBars {
+        display: flex;
         flex-direction: column;
         cursor: pointer;
     }
@@ -266,9 +313,6 @@ nav {
         position: relative;
         border: none;
     }
-
-
-
 
     .dropdown-elements li {
         margin: 2%;
