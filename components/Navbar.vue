@@ -233,14 +233,27 @@ nav {
 .dropdown-elements li a {
     width: 100%;
     padding: 2%;
+    margin-left: 5%;
 }
 
 .dropdown-elements li:hover a {
-    background-color: rgba(#ff6f3f, 0.3);
     color: $bitcamp;
     border-radius: 0.5rem;
     width: 100%;
     text-decoration: none !important;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bitcamp;
+        opacity: 0.3;
+        border-radius: 0.5rem;
+        z-index: -1;
+    }
 }
 
 .hamburgerContainer {
