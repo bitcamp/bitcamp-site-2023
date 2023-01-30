@@ -243,11 +243,10 @@ function toggleButton(question: string) {
   text-align: left;
   font-size: medium;
   justify-content: top;
-  opacity: 0;
   max-height: 0px;
   max-width: 90%;
   overflow-y: hidden;
-  transition: all 0.5s ease-out;
+  transition: all 0.75s;
 }
 
 .Answer_Opened {
@@ -258,7 +257,6 @@ function toggleButton(question: string) {
   justify-content: top;
   max-width: 90%;
   overflow-y: auto;
-  animation: growDown 300ms ease-in-out forwards;
-  transition: all 0.5s ease-out;
+  transition: all 0.75s;
 }
 </style>
