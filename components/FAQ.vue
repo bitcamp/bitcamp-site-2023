@@ -177,8 +177,9 @@ function toggleButton(question: string) {
 }
 
 .Header {
-  font-size: x-large;
-  padding: 1.5%;
+  font-size: xx-large;
+  padding: 2%;
+  padding-bottom: 3%;
 }
 
 .Question_Wrapper {
@@ -208,14 +209,14 @@ function toggleButton(question: string) {
     content: url(plus_sign.png);
     size: 20px;
     transform: rotate(0deg);
-    transition: all 0.5s ease-out;
+    transition: all 0.4s ease-out;
   }
 
   &.opened {
     &::after {
       content: url(plus_sign.png);
       transform: rotate(45deg);
-      transition: all 0.5s ease-out;
+      transition: all 0.4s ease-out;
     }
   }
 
@@ -246,7 +247,7 @@ function toggleButton(question: string) {
   max-height: 0px;
   max-width: 90%;
   overflow-y: hidden;
-  transition: all 0.75s;
+  transition: all 0.6s ease-in-out;
 }
 
 .Answer_Opened {
@@ -257,6 +258,6 @@ function toggleButton(question: string) {
   justify-content: top;
   max-width: 90%;
   overflow-y: auto;
-  transition: all 0.75s;
+  transition: all 0.6s ease-in-out;
 }
 </style>
