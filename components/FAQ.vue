@@ -10,6 +10,7 @@
           :key="i"
         >
           <button
+            v-b-toggle.collapse-1
             @click="toggleButton(faq.question)"
             class="Question_Button"
             :class="{ opened: faq.question === currentOpenedQuestion }"
@@ -56,7 +57,7 @@
   </div>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { ref } from 'vue';
 
 interface FAQ {
@@ -161,7 +162,7 @@ function toggleButton(question: string) {
 }
 </script>
 
-<style lang = 'scss'>
+<style lang="scss">
 .FAQ_Section {
   border-radius: 30px;
   padding: 20px 30px;
@@ -244,10 +245,10 @@ function toggleButton(question: string) {
   text-align: left;
   font-size: medium;
   justify-content: top;
-  max-height: 0px;
   max-width: 90%;
   overflow-y: hidden;
-  transition: all 0.6s ease-in-out;
+  transition: max-height 0.35s ease-in-out;
+  max-height: 0;
 }
 
 .Answer_Opened {
@@ -255,9 +256,9 @@ function toggleButton(question: string) {
   padding-top: 1rem;
   text-align: left;
   font-size: medium;
-  justify-content: top;
   max-width: 90%;
   overflow-y: auto;
-  transition: all 0.6s ease-in-out;
+  transition: max-height 0.75s ease-in-out;
+  max-height: 280px;
 }
 </style>
