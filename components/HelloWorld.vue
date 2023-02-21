@@ -1,5 +1,5 @@
 <template>
-  <Hero />
+  <Navbar />
 </template>
 
 <script setup lang="ts"></script>
