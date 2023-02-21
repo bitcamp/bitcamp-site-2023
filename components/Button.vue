@@ -1,18 +1,13 @@
 <template>
   <button
     :class="[
-      primary
-        ? disabled
-          ? 'primary-disabled'
-          : 'primary-default'
-        : disabled
-        ? 'secondary-disabled'
-        : 'secondary-default',
+      disabled ? 'disabled' : '',
       'baseButton',
       size === 'small' ? 'small' : '',
       size === 'medium' ? 'medium' : '',
       size === 'large' ? 'large' : '',
     ]"
+    :style="{ backgroundColor: color }"
   >
     {{ text }}
   </button>
@@ -27,14 +22,14 @@ export default {
 <script setup lang="ts">
 export interface Props {
   text: string;
-  primary: boolean;
+  color: string;
   disabled: boolean;
   size: string;
 }
 
 withDefaults(defineProps<Props>(), {
   text: 'Button',
-  primary: true,
+  color: '#ff6f3f',
   disabled: false,
   size: 'small',
 });
@@ -49,9 +44,7 @@ withDefaults(defineProps<Props>(), {
   padding: 6px 19px;
   gap: 10px;
 
-  position: absolute;
-
-  border-radius: 10px;
+  border-radius: 4px;
 
   font-family: 'Avenir';
   font-style: normal;
@@ -59,6 +52,9 @@ withDefaults(defineProps<Props>(), {
   /* identical to box height */
   display: flex;
   align-items: center;
+
+  color: var(--color-white);
+  border: 0px;
 }
 
 .small {
@@ -75,39 +71,14 @@ withDefaults(defineProps<Props>(), {
   line-height: 24px;
 }
 .large {
-  width: 107px;
+  width: 130px;
   height: 37px;
   font-size: 16px;
   line-height: 24px;
 }
 
-.primary-default {
-  background: var(--color-bitcamp);
-  color: var(--color-white);
-  border: 0px;
-}
-
-.secondary-default {
-  background: var(--color-white);
-  box-sizing: border-box;
-  border: 2px solid var(--color-atlantic);
-  color: var(--color-atlantic);
-}
-
-.primary-disabled {
+.disabled {
   opacity: 0.5;
-  background: var(--color-bitcamp);
-  color: var(--color-white);
-  border: 0px;
-  cursor: not-allowed;
-}
-
-.secondary-disabled {
-  opacity: 0.5;
-  background: var(--color-white);
-  box-sizing: border-box;
-  border: 2px solid var(--color-atlantic);
-  color: var(--color-atlantic);
   cursor: not-allowed;
 }
 </style>
