@@ -245,9 +245,11 @@ function toggleButton(question: string) {
   text-align: left;
   font-size: medium;
   justify-content: top;
-  max-width: 90%;
   overflow-y: hidden;
-  transition: max-height 0.35s ease-in-out;
+  // transition: max-height 0.75s ease-in-out;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.26s ease;
   max-height: 0;
 }
 
@@ -256,9 +258,9 @@ function toggleButton(question: string) {
   padding-top: 1rem;
   text-align: left;
   font-size: medium;
-  max-width: 90%;
   overflow-y: auto;
-  transition: max-height 0.75s ease-in-out;
-  max-height: 280px;
+  // transition: max-height 0.75s ease-in-out;
+  transform: scaleY(1);
+  height: auto;
 }
 </style>
