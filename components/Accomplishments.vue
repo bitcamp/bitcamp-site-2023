@@ -4,13 +4,13 @@
       <div class="big">9</div>
       <div class="description">years of Bitcamp</div>
     </div>
-    <div class="hackers">
-      <div class="big">1200+</div>
-      <div class="description">hackers and counting</div>
-    </div>
     <div class="sponsors">
       <div class="big">20+</div>
       <div class="description">sponsors each year</div>
+    </div>
+    <div class="hackers">
+      <div class="big">1000+</div>
+      <div class="description">hackers and counting</div>
     </div>
   </div>
 </template>
