@@ -296,7 +296,7 @@ nav {
 }
 
 .hamburgerContainer {
-  display: flex;
+  display: none;
 }
 
 .divider {
