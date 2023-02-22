@@ -131,6 +131,8 @@ $mango: var(--color-mango);
 
 header {
   margin: 0;
+  z-index: 1;
+  position: relative;
   padding: 1.5%;
   border: 0;
   width: 100%;

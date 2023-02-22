@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <HelloWorld />
+    <Navbar />
     <Hero />
     <Accomplishments />
   </div>
