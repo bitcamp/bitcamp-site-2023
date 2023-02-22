@@ -28,6 +28,7 @@ export default {
   align-items: center;
   min-width: 200px;
   position: relative;
+  gap: 1rem;
 }
 
 .years {
@@ -97,7 +98,7 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .container {
+  #mission {
     display: flex;
     flex-direction: column;
     align-items: center;
