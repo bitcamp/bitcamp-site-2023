@@ -4,13 +4,24 @@
       <div class="non-pages">
         <div id="logo-container">
           <a tag="img" href="/">
-            <img id="logo-with-text" src="~/public/bitcamp-brand/logos/logotype.png" />
-            <img id="logo-image" src="~/public/bitcamp-brand/logos/bitcamp.png" />
+            <img
+              id="logo-with-text"
+              src="~/public/bitcamp-brand/logos/logotype.png"
+            />
+            <img
+              id="logo-image"
+              src="~/public/bitcamp-brand/logos/bitcamp.png"
+            />
           </a>
         </div>
         <div class="hamburgerContainer">
-          <button class="hamburger hamburger--spin" type="button" style="color: #ffffff"
-            :class="{ 'is-active': showDropdown }" @click="toggleDropdown">
+          <button
+            class="hamburger hamburger--spin"
+            type="button"
+            style="color: #ffffff"
+            :class="{ 'is-active': showDropdown }"
+            @click="toggleDropdown"
+          >
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
@@ -42,29 +53,34 @@
         </li> -->
         <template v-if="bigScreen">
           <li class="image">
-            <img id="marshies" src="~/assets/images/rider.png" />
+            <img class="marshie red" src="~/assets/images/rider.png" />
           </li>
           <li class="image">
-            <img id="marshies" src="~/assets/images/hiker.png" />
+            <img class="marshie blue" src="~/assets/images/hiker.png" />
           </li>
           <li class="image">
-            <img id="marshies" src="~/assets/images/watcher.png" />
+            <img class="marshie green" src="~/assets/images/watcher.png" />
           </li>
-          <a id="mlh-trust-badge" style="
-                      display: block;
-                      height: 32px;
-                      width: 32px;
-                      max-width: 100px;
-                      min-width: 60px;
-                      width: 10%;
-                      top: 0;
-                      margin-right: -1.5rem;
-                      margin-top: -1.5rem;
-                    "
+          <a
+            id="mlh-trust-badge"
+            style="
+              display: block;
+              height: 32px;
+              width: 32px;
+              max-width: 100px;
+              min-width: 60px;
+              width: 10%;
+              top: 0;
+              margin-right: -1.5rem;
+              margin-top: -1.5rem;
+            "
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=blue"
-            target="_blank"><img
+            target="_blank"
+            ><img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-blue.svg"
-              alt="Major League Hacking 2023 Hackathon Season" style="width: 100%" /></a>
+              alt="Major League Hacking 2023 Hackathon Season"
+              style="width: 100%"
+          /></a>
         </template>
       </ul>
     </nav>
@@ -163,10 +179,13 @@ nav {
   display: none;
 }
 
-#marshies {
+.marshie {
   display: flex;
-  height: 32px;
   width: 32px;
+
+  &.red {
+    width: 44px;
+  }
 }
 
 .nav-pages {
