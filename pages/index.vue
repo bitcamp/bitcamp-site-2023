@@ -3,6 +3,11 @@
     <Navbar />
     <Hero />
     <Accomplishments />
+    <Tracks />
+    <img class="cloud-1" src="~/assets/images/cloud1.png" />
+    <MiniEvents />
+    <img class="cloud-2" src="~/assets/images/cloud2.png" />
+    <FAQ />
     <Footer />
   </div>
 </template>
@@ -106,7 +111,27 @@ export default {
 <style scoped lang="scss">
 .app-container {
   position: relative;
-  background-color: #355894;
+  background-color: #345793;
+}
+
+img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cloud-1 {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  margin-top: -12vw;
+}
+
+.cloud-2 {
+  position: absolute;
+  right: 0;
+  width: 80vw;
+  margin-top: -5vw;
 }
 </style>
 

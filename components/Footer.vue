@@ -32,9 +32,8 @@ export default {
 footer {
   position: relative;
   box-sizing: border-box;
-  height: 100vw;
   width: 100vw;
-  margin-top: 50vw;
+  height: 110vw;
   color: white;
   font-size: 1.125rem;
   line-height: 1.4;
