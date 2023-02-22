@@ -106,3 +106,9 @@ export default {
   background-color: #355894;
 }
 </style>
+
+<style lang="scss">
+* {
+  box-sizing: border-box;
+}
+</style>
