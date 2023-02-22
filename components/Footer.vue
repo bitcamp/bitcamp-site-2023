@@ -4,12 +4,14 @@
     <div class="footer-text">
       <div class="links">
         <span class="links-1">
-          <a href="http://mlh.io/code-of-conduct">MLH Code of Conduct</a> |
-          <a href="/sponsor">Sponsor Us</a></span
+          <a href="http://mlh.io/code-of-conduct" target="_blank"
+            >MLH Code of Conduct</a
+          >
+          | <a href="/sponsor" target="_blank">Sponsor Us</a></span
         >
         <span class="links-separator"> | </span>
         <span class="links-2">
-          <a href="/brand.pdf">Brand Guidelines</a> |
+          <a href="/brand.pdf" target="_blank">Brand Guidelines</a> |
           <a href="mailto:hello@bit.camp">Contact Us</a>
         </span>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <a class="button-link" :href="link">
+  <a class="button-link" :href="link" target="_blank">
     <div
       :class="[
         disabled ? 'disabled' : '',
