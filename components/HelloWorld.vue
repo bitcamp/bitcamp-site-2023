@@ -1,6 +1,7 @@
 <template>
   <Navbar />
   <Header />
+  <CampfireGames />
 </template>
 
 <script setup lang="ts"></script>
