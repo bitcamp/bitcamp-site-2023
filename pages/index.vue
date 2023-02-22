@@ -3,6 +3,7 @@
     <Navbar />
     <Hero />
     <Accomplishments />
+    <Footer />
   </div>
 </template>
 
