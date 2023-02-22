@@ -7,6 +7,7 @@
         size === 'small' ? 'small' : '',
         size === 'medium' ? 'medium' : '',
         size === 'large' ? 'large' : '',
+        size === 'xl' ? 'xl' : '',
       ]"
       :style="{ backgroundColor: color }"
     >
@@ -82,6 +83,14 @@ withDefaults(defineProps<Props>(), {
   height: 37px;
   font-size: 16px;
   line-height: 24px;
+}
+
+.xl {
+  width: 215px;
+  height: 45.54px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 6px;
 }
 
 .disabled {
