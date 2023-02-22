@@ -61,6 +61,11 @@ defineProps<{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 576px) {
+    top: 0;
+    width: 200%;
+  }
 }
 
 .header {
