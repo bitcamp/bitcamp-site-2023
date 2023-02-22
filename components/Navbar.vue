@@ -4,24 +4,13 @@
       <div class="non-pages">
         <div id="logo-container">
           <a tag="img" href="/">
-            <img
-              id="logo-with-text"
-              src="~/public/bitcamp-brand/logos/logotype.png"
-            />
-            <img
-              id="logo-image"
-              src="~/public/bitcamp-brand/logos/bitcamp.png"
-            />
+            <img id="logo-with-text" src="~/public/bitcamp-brand/logos/logotype.png" />
+            <img id="logo-image" src="~/public/bitcamp-brand/logos/bitcamp.png" />
           </a>
         </div>
         <div class="hamburgerContainer">
-          <button
-            class="hamburger hamburger--spin"
-            type="button"
-            style="color: #ffffff"
-            :class="{ 'is-active': showDropdown }"
-            @click="toggleDropdown"
-          >
+          <button class="hamburger hamburger--spin" type="button" style="color: #ffffff"
+            :class="{ 'is-active': showDropdown }" @click="toggleDropdown">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
@@ -31,26 +20,26 @@
 
       <ul v-if="showDropdown || bigScreen" class="nav-pages">
         <li class="page">
-          <a href="/our-mission">Our Mission</a>
+          <a href="#mission">Our Mission</a>
         </li>
         <li class="page">
-          <a href="/tracks">Tracks</a>
+          <a href="#tracks">Tracks</a>
         </li>
         <li class="page">
-          <a href="/mini-events">Mini Events</a>
+          <a href="#mini-events">Mini Events</a>
         </li>
         <li class="page">
-          <a href="/campfire-games">Campfire Games</a>
+          <a href="#campfire-games">Campfire Games</a>
         </li>
+        <!-- <li class="page">
+          <a href="#schedule">Schedule</a>
+        </li> -->
         <li class="page">
-          <a href="/schedule">Schedule</a>
+          <a href="#faq">FAQ</a>
         </li>
-        <li class="page">
-          <a href="/faq">FAQ</a>
-        </li>
-        <li class="page">
-          <a href="/sponsor">Sponsors</a>
-        </li>
+        <!-- <li class="page">
+          <a href="#sponsor">Sponsors</a>
+        </li> -->
         <template v-if="bigScreen">
           <li class="image">
             <a tag="img" href="/">
@@ -67,26 +56,21 @@
               <img id="marshies" src="~/assets/images/watcher.png" />
             </a>
           </li>
-          <a
-            id="mlh-trust-badge"
-            style="
-              display: block;
-              height: 32px;
-              width: 32px;
-              max-width: 100px;
-              min-width: 60px;
-              width: 10%;
-              top: 0;
-              margin-right: -1.5rem;
-              margin-top: -1.5rem;
-            "
+          <a id="mlh-trust-badge" style="
+                      display: block;
+                      height: 32px;
+                      width: 32px;
+                      max-width: 100px;
+                      min-width: 60px;
+                      width: 10%;
+                      top: 0;
+                      margin-right: -1.5rem;
+                      margin-top: -1.5rem;
+                    "
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=blue"
-            target="_blank"
-            ><img
+            target="_blank"><img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-blue.svg"
-              alt="Major League Hacking 2023 Hackathon Season"
-              style="width: 100%"
-          /></a>
+              alt="Major League Hacking 2023 Hackathon Season" style="width: 100%" /></a>
         </template>
       </ul>
     </nav>
@@ -395,6 +379,7 @@ nav {
   .divider {
     display: none;
   }
+
   .hamburger {
     padding: 15px 15px;
     display: inline-block;
@@ -410,12 +395,15 @@ nav {
     margin: 0;
     overflow: visible;
   }
+
   .hamburger:hover {
     opacity: 0.7;
   }
+
   .hamburger.is-active:hover {
     opacity: 0.7;
   }
+
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
@@ -434,6 +422,7 @@ nav {
     top: 50%;
     margin-top: -2px;
   }
+
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
@@ -446,14 +435,17 @@ nav {
     transition-duration: 0.15s;
     transition-timing-function: ease;
   }
+
   .hamburger-inner::before,
   .hamburger-inner::after {
     content: '';
     display: block;
   }
+
   .hamburger-inner::before {
     top: -10px;
   }
+
   .hamburger-inner::after {
     bottom: -10px;
   }
@@ -465,9 +457,11 @@ nav {
     transition-duration: 0.22s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+
   .hamburger--spin .hamburger-inner::before {
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
+
   .hamburger--spin .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in,
       transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -478,11 +472,13 @@ nav {
     transition-delay: 0.12s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
   .hamburger--spin.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
     transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
   }
+
   .hamburger--spin.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);

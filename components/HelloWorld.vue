@@ -1,9 +1,0 @@
-<template>
-  <Navbar />
-  <Header />
-  <CampfireGames />
-</template>
-
-<script setup lang="ts"></script>
-
-<style scoped lang="scss"></style>
