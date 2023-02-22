@@ -81,6 +81,7 @@
 #teams-div {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
   padding-top: 30px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: center;
@@ -93,9 +94,6 @@
 .team-section {
   width: 30%;
   text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
 }
 
 .team-title {
