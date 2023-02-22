@@ -76,7 +76,7 @@ const questions = ref<FAQ[]>([
   {
     question: 'How else can I get involved?',
     answer:
-      "We'd love to get you on our volunteering or mentoring teams! If you'd like to help, keep an eye out later for a volunteer form. Also, be sure to follow us on Facebook and Twitter for updates!",
+      "We'd love to get you on our volunteering or mentoring teams! If you'd like to help, please fill out our mentor form or our volunteer form. Also, be sure to follow us on Facebook and Twitter for updates!",
   },
   {
     question: 'Teams',
