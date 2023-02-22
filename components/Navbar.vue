@@ -71,6 +71,8 @@
               min-width: 60px;
               width: 10%;
               top: 0;
+              margin-right: -1.5rem;
+              margin-top: -1.5rem;
             "
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=blue"
             target="_blank"
