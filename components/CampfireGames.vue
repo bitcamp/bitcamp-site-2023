@@ -16,7 +16,7 @@
     <div id="teams-div">
       <div class="team-section">
         <img
-          class="team-picture"
+          class="team-picture red-marshie"
           src="../assets/images/red rider marshie.png"
           alt="Red marshie"
         />
@@ -61,7 +61,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style scoped lang="scss">
 #campfire-games {
   width: 75%;
   /* height: 300px; */
@@ -110,6 +110,12 @@ img {
 
 .team-title {
   padding-top: 15px;
+}
+
+.team-picture {
+  &.red-marshie {
+    margin-left: 2.6rem;
+  }
 }
 
 @media only screen and (max-width: 864px) {
