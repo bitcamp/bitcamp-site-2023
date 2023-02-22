@@ -13,15 +13,29 @@
 
         <div id="teams-div">
             <div class="team-section">
-                <img class="team-picture" src="/blue hiker marshie.png" alt="Blue marshie">
-                <h3 class="team-title">Blue Team</h3>
+                <img class="team-picture" src="../assets/images/blue hiker marshie.png" alt="Blue marshie">
+                <h3 class="team-title blue">Blue Team</h3>
                 <p class="team-blurb">
                     The <strong class="blue">blue team</strong> is rational and clear-headed. Their curiosity and intelligence
               are some of their greatest assets in understanding and exploring the world around them.
                 </p>
             </div>
-            <div>B</div>
-            <div>C</div>
+            <div class="team-section">
+                <img class="team-picture" src="../assets/images/red rider marshie.png" alt="Red marshie">
+                <h3 class="team-title red">Red Team</h3>
+                <p class="team-blurb">
+                    The <strong class="red">red team</strong> is passionate and fiery! Their emotion is their strength in
+              handling whatever comes their way.
+                </p>
+            </div>
+            <div class="team-section">
+                <img class="team-picture" src="../assets/images/green watcher marshie.png" alt="Green marshie">
+                <h3 class="team-title green">Green Team</h3>
+                <p class="team-blurb">
+                    The <strong class="green">green team</strong> is adaptable&mdash;always growing and thriving in new and
+              challenging circumstances.
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -32,7 +46,7 @@
 
 <style scoped>
 #cfg-main {
-    width: 760px;
+    width: 80%;
     height: 300px;
     box-sizing: border-box;
     align-items: center;
@@ -51,8 +65,7 @@
 }
 
 img {
-    max-width: 80%;
-    max-height: 80%;
+    max-height: 200px;
     margin: auto;
     border-color: red;
     border-width: 1px;
@@ -60,5 +73,17 @@ img {
 
 .team-title {
     padding-top: 15px;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }
 </style>
