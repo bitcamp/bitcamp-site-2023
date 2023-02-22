@@ -3,6 +3,7 @@
     <Navbar />
     <Hero />
     <Accomplishments />
+    <CampfireGames />
     <Footer />
   </div>
 </template>
