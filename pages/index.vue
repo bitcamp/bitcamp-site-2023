@@ -3,6 +3,7 @@
     <HelloWorld />
     <Hero />
     <Accomplishments />
+    <Footer />
   </div>
 </template>
 
