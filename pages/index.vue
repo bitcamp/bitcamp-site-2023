@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <HelloWorld />
+    <Hero />
     <Accomplishments />
   </div>
 </template>
@@ -104,5 +105,12 @@ export default {
 <style scoped lang="scss">
 .app-container {
   position: relative;
+  background-color: #355894;
+}
+</style>
+
+<style lang="scss">
+* {
+  box-sizing: border-box;
 }
 </style>

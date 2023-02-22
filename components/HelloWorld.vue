@@ -1,5 +1,6 @@
 <template>
   <Navbar />
+  <Header />
 </template>
 
 <script setup lang="ts"></script>

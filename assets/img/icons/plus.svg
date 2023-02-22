@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 224 224"
+   fill="none"
+   version="1.1"
+   id="svg70"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs74" />
+  <rect
+     x="48"
+     y="102"
+     width="128"
+     height="20"
+     rx="5"
+     fill="black"
+     id="rect66"
+     style="fill:#ffffff;fill-opacity:1" />
+  <rect
+     x="102"
+     y="48"
+     width="20"
+     height="128"
+     rx="5"
+     fill="black"
+     id="rect68"
+     style="fill:#ffffff;fill-opacity:1" />
+</svg>
