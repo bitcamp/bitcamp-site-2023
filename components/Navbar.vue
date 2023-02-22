@@ -156,6 +156,7 @@ nav {
 
 #logo-container {
   position: absolute;
+  margin-top: -2px;
   margin-left: 1%;
   height: 100%;
   width: 100%;
@@ -196,6 +197,10 @@ nav {
   align-items: center;
   text-decoration: none !important;
   z-index: 3;
+
+  &.page {
+    margin-top: 4px;
+  }
 
   :hover {
     color: $mango;
