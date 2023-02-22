@@ -47,11 +47,14 @@
 <style scoped>
 #cfg-main {
     width: 75%;
-    height: 300px;
+    /* height: 300px; */
     box-sizing: border-box;
     align-items: center;
     text-align: center;
     margin: auto;
+    color: white;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 #cfg-blurb {
@@ -67,7 +70,7 @@
 }
 
 .team-section {
-    width: 20%;
+    width: 30%;
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
