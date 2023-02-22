@@ -29,6 +29,7 @@ export default {
   min-width: 200px;
   position: relative;
   gap: 1rem;
+  margin: 0 8rem;
 }
 
 .years {
@@ -78,7 +79,6 @@ export default {
   font-size: 1rem;
   align-self: center;
   color: white;
-  opacity: 0.5;
 }
 
 @media (max-width: 768px) {
@@ -93,7 +93,6 @@ export default {
     font-size: 0.8rem;
     align-self: center;
     color: white;
-    opacity: 0.5;
   }
 }
 
@@ -120,7 +119,6 @@ export default {
     font-size: 0.8rem;
     align-self: center;
     color: white;
-    opacity: 0.5;
     width: 100%;
   }
 }
