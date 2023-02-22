@@ -48,6 +48,10 @@ defineProps<{
   display: flex;
   justify-content: center;
   padding: 10% 0;
+
+  @media (max-width: 576px) {
+    margin-bottom: 0rem !important;
+  }
 }
 
 .hero-image {
