@@ -1,5 +1,5 @@
 <template>
-  <section id="hero">
+  <div id="hero" class="section">
     <img class="hero-image" src="~/assets/images/hero.png" />
     <div class="header">
       <img src="/bitcamp-brand/logos/bitcamp.png" />
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">

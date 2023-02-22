@@ -1,5 +1,5 @@
 <template>
-  <div id="campfire-games">
+  <div id="campfire-games" class="section">
     <h1 class="section-title">Campfire Games</h1>
     <p id="cfg-blurb">
       The Campfire Games is a way to learn, grow, and build with the Bitcamp

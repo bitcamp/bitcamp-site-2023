@@ -1,5 +1,5 @@
 <template>
-  <div id="tracks">
+  <div id="tracks" class="section">
     <h1 class="tracks-title">Tracks</h1>
 
     <div class="tracks-container">

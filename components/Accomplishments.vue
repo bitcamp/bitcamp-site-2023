@@ -1,5 +1,5 @@
 <template>
-  <div id="mission">
+  <div id="mission" class="section">
     <div class="years">
       <div class="big">9</div>
       <div class="description">years of Bitcamp</div>
