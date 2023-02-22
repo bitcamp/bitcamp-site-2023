@@ -138,7 +138,6 @@ function toggleButton(question: string) {
     overflow-y: visible;
     aspect-ratio: 10;
     background-size: cover !important;
-    margin: 20px;
     box-shadow: 0, 0, 20px, 0 rgba(24, 22, 81, 0.2);
     z-index: 10;
     text-align: center;
@@ -176,10 +175,10 @@ function toggleButton(question: string) {
 .Question_Button {
     &::after {
         content: url(../assets/img/icons/plus.svg);
-        min-width: 3rem;
-        min-height: 3rem;
-        max-width: 3rem;
-        max-height: 3rem;
+        min-width: 2rem;
+        min-height: 2rem;
+        max-width: 2rem;
+        max-height: 2rem;
         transform: rotate(0deg);
         transition: all 0.4s ease-out;
     }
@@ -200,7 +199,6 @@ function toggleButton(question: string) {
     border-bottom: 2px solid white;
     background: transparent;
     padding: 8px 12px;
-    border-radius: 0px;
     text-emphasis: bold;
     text-align: left;
     font-family: 'Avenir';
@@ -211,8 +209,9 @@ function toggleButton(question: string) {
     font-weight: bold;
     color: white;
     overflow: hidden;
-    height: 5.5vw;
+    height: 7vw;
     width: 95%;
+    padding-bottom: 1rem;
 }
 
 .Answer {
@@ -251,9 +250,6 @@ function toggleButton(question: string) {
     .Question,
     .Question_Button {
         font-size: 4vw;
-    }
-
-    .Question_Button {
         height: 15vw;
     }
 
