@@ -64,7 +64,7 @@ defineProps<{
 
   @media (max-width: 576px) {
     top: 0;
-    width: 200%;
+    width: 100%;
   }
 }
 
