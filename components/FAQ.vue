@@ -177,10 +177,10 @@ function toggleButton(question: string) {
 .Question_Button {
     &::after {
         content: url(../assets/img/icons/plus.svg);
-        min-width: 3rem;
-        min-height: 3rem;
-        max-width: 3rem;
-        max-height: 3rem;
+        min-width: 2rem;
+        min-height: 2rem;
+        max-width: 2rem;
+        max-height: 2rem;
         transform: rotate(0deg);
         transition: all 0.4s ease-out;
     }
@@ -212,7 +212,7 @@ function toggleButton(question: string) {
     font-weight: bold;
     color: white;
     overflow: hidden;
-    height: 5.5vw;
+    height: 8vw;
     width: 95%;
 }
 
@@ -252,10 +252,7 @@ function toggleButton(question: string) {
     .Question,
     .Question_Button {
         font-size: 4vw;
-    }
-
-    .Question_Button {
-        height: 15vw;
+        height: 20vw;
     }
 
     .Answer,
