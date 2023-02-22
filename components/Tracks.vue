@@ -1,6 +1,6 @@
 <template>
   <div id="tracks">
-    <h1 id="tracks-title">Tracks</h1>
+    <h1 class="tracks-title">Tracks</h1>
 
     <div class="tracks-container">
       <article class="card">
@@ -66,12 +66,21 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+export default {
+  name: 'TracksComponent',
+};
+</script>
 
 <style scoped lang="scss">
-#tracks-title {
+#tracks {
+  position: relative;
+  z-index: 10;
+}
+
+.tracks-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .tracks-container {
   display: flex;

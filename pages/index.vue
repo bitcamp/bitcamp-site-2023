@@ -113,6 +113,10 @@ export default {
 .app-container {
   position: relative;
   background-color: #345793;
+
+  & > *:not(:last-child) {
+    margin-bottom: 5rem !important;
+  }
 }
 
 img {

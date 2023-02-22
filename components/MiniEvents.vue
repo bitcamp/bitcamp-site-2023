@@ -59,10 +59,9 @@
   color: white;
   box-shadow: 0 0.5rem 1rem rgba(black, 0.3);
   width: 70%;
-  margin: 0 auto;
+  margin: auto auto;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  margin-top: 5rem;
 
   @media (min-width: 576px) and (max-width: 767.8px) {
     width: 90%;
@@ -71,6 +70,10 @@
   @media (max-width: 576px) {
     width: 90%;
   }
+}
+
+#mini-events-title {
+  margin-bottom: 1rem;
 }
 
 .mini-events-container {

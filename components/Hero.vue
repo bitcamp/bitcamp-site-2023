@@ -8,9 +8,23 @@
         <h3>Bitcamp returns April 7-9, 2023</h3>
         <h2>Applications are now open!</h2>
         <div class="header-button-container">
-          <Button text="Hacker" link="https://register.bit.camp" size="large"></Button>
-          <Button text="Volunteer" link="https://forms.gle/kyQwDzX7UKDEwa7b9" size="large" color="#324A79"></Button>
-          <Button text="Mentor" link="https://forms.gle/kP2nrzPzwd6PD8nLA" size="large" color="#8F9EBC"></Button>
+          <Button
+            text="Hacker"
+            link="https://register.bit.camp"
+            size="large"
+          ></Button>
+          <Button
+            text="Volunteer"
+            link="https://forms.gle/kyQwDzX7UKDEwa7b9"
+            size="large"
+            color="#324A79"
+          ></Button>
+          <Button
+            text="Mentor"
+            link="https://forms.gle/kP2nrzPzwd6PD8nLA"
+            size="large"
+            color="#8F9EBC"
+          ></Button>
         </div>
       </div>
     </div>

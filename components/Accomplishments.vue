@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="mission">
     <div class="years">
       <div class="big">9</div>
       <div class="description">years of Bitcamp</div>
@@ -15,15 +15,17 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+export default {
+  name: 'AccomplishmentsSection',
+};
+</script>
 
 <style scoped lang="scss">
-.container {
+#mission {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 5%;
-  // background-color: rgba(53, 88, 148, 255);
   min-width: 200px;
   position: relative;
 }
