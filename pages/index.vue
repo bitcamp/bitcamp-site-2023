@@ -139,9 +139,3 @@ img {
   margin-top: -10vw;
 }
 </style>
-
-<style lang="scss">
-* {
-  box-sizing: border-box;
-}
-</style>
