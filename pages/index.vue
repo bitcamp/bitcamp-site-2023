@@ -1,7 +1,6 @@
 <template>
   <div class="app-container">
     <HelloWorld />
-    <FAQ />
   </div>
 </template>
 
