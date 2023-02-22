@@ -1,17 +1,5 @@
 <template>
   <section class="Rtable js-RtableTabs">
-    <div class="Tablist" role="tablist">
-      <button
-        v-for="(tier, index) in tierNames"
-        :key="index"
-        :class="'Tab ' + tier"
-        role="tab"
-        aria-selected="false"
-      >
-        {{ tier }}
-      </button>
-    </div>
-
     <div class="Rtable-grid">
       <div class="Rtable-cell Rtable-cell-blank Rtable-cell--head"></div>
       <div

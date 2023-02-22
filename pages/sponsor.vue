@@ -471,20 +471,25 @@
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Giga"></div>
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Tera"></div>
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Peta"></div>
-            <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Virtual"></div>
+            <div
+              class="Rtable-cell Rtable-cell--foot Rtable-cell-Virtual"
+            ></div>
 
-
-            <div class="Rtable-cell Rtable-category-cell Rtable-cell--left mt-5">
-              Additional Prize Category</div>
+            <div
+              class="Rtable-cell Rtable-category-cell Rtable-cell--left mt-5"
+            >
+              Additional Prize Category
+            </div>
             <div class="Rtable-cell Rtable-cell-Byte mt-5">$1,000</div>
             <div class="Rtable-cell Rtable-category-cell mt-5">
-              Bitcamp Podcast</div>
-            <div class="Rtable-cell Rtable-cell-Byte Rtable-cell--right mt-5">$2,000</div>
+              Bitcamp Podcast
+            </div>
+            <div class="Rtable-cell Rtable-cell-Byte Rtable-cell--right mt-5">
+              $2,000
+            </div>
           </div>
 
-          <section class="Rtable js-RtableTabs">
-
-        </section>
+          <section class="Rtable js-RtableTabs"></section>
 
           <hr class="divider" />
           <section class="ConnectSection">
@@ -510,17 +515,18 @@
   </div>
 </template>
 
-<!-- <script>
+<!-- <script type="module">
+import $ from 'jquery';
 (function ($) {
-  "use strict";
+  'use strict';
   $.fn.responsiveTable = function () {
     var toggleColumns = function ($table) {
       var selectedCol;
       var colNames = [];
 
       // Find current tab
-      $table.find(".Tab").each(function () {
-        if ($(this).attr("aria-selected") === "true") {
+      $table.find('.Tab').each(function () {
+        if ($(this).attr('aria-selected') === 'true') {
           selectedCol = $(this).text();
         }
         colNames.push($(this).text());
@@ -530,10 +536,10 @@
       colNames.forEach((name) => {
         if (name === selectedCol) {
           $table.addClass(`${name}-active`);
-          $table.find(`.Rtable-cell-${name}`).removeClass("hiddenSmall");
+          $table.find(`.Rtable-cell-${name}`).removeClass('hiddenSmall');
         } else {
           $table.removeClass(`${name}-active`);
-          $table.find(`.Rtable-cell-${name}`).addClass("hiddenSmall");
+          $table.find(`.Rtable-cell-${name}`).addClass('hiddenSmall');
         }
       });
     };
@@ -543,19 +549,19 @@
     });
 
     $(this)
-      .find(".Tab")
+      .find('.Tab')
       .click(function () {
         $(this)
           .blur()
-          .attr("aria-selected", "true")
+          .attr('aria-selected', 'true')
           .siblings()
-          .attr("aria-selected", "false");
-        toggleColumns($(this).parents(".Rtable"));
+          .attr('aria-selected', 'false');
+        toggleColumns($(this).parents('.Rtable'));
       });
   };
 })(jQuery);
 
-$(".js-RtableTabs").responsiveTable();
+$('.js-RtableTabs').responsiveTable();
 </script> -->
 
 <style>
@@ -567,8 +573,8 @@ $(".js-RtableTabs").responsiveTable();
 }
 
 a {
-    text-decoration: none !important;
-    color: var(--color-primary) !important;
+  text-decoration: none !important;
+  color: var(--color-primary) !important;
 }
 
 /* @media only screen and (max-width: 600px) {
@@ -581,8 +587,8 @@ a {
   display: none;
 }
 
-@media all and (max-width: 768px) {
-  .Tablist {
+@media all and (max-width: 696px) {
+  /*.Tablist {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -594,10 +600,11 @@ a {
     -webkit-box-pack: stretch;
     -ms-flex-pack: stretch;
     justify-content: stretch;
-  }
-  /* .Rtable {
-    display: none;
   } */
+  .Rtable-grid {
+    width: 696px;
+    overflow-x: scroll;
+  }
 }
 
 .Tab {
@@ -762,5 +769,4 @@ a {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
-
 </style>
