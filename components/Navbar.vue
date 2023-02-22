@@ -175,7 +175,7 @@ nav {
 }
 
 #logo-image {
-  display: flex;
+  display: none;
 }
 
 #marshies {
