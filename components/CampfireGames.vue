@@ -15,11 +15,7 @@
 
     <div id="teams-div">
       <div class="team-section">
-        <img
-          class="team-picture red-marshie"
-          src="../assets/images/red rider marshie.png"
-          alt="Red marshie"
-        />
+        <img class="team-picture red-marshie" src="../assets/images/rider.png" alt="Red marshie" />
         <h3 class="team-title red">Red Team</h3>
         <p class="team-blurb">
           The red team is <strong class="red">passionate</strong> and
@@ -28,11 +24,7 @@
         </p>
       </div>
       <div class="team-section">
-        <img
-          class="team-picture"
-          src="../assets/images/blue hiker marshie.png"
-          alt="Blue marshie"
-        />
+        <img class="team-picture" src="../assets/images/blue hiker marshie.png" alt="Blue marshie" />
         <h3 class="team-title blue">Blue Team</h3>
         <p class="team-blurb">
           The blue team is <strong class="blue">rational</strong> and
@@ -42,11 +34,7 @@
         </p>
       </div>
       <div class="team-section">
-        <img
-          class="team-picture"
-          src="../assets/images/green watcher marshie.png"
-          alt="Green marshie"
-        />
+        <img class="team-picture" src="../assets/images/green watcher marshie.png" alt="Green marshie" />
         <h3 class="team-title green">Green Team</h3>
         <p class="team-blurb">
           The green team is
@@ -112,13 +100,9 @@ img {
   padding-top: 15px;
 }
 
-.team-picture {
-  &.red-marshie {
-    margin-left: 2.6rem;
-  }
-}
 
-@media only screen and (max-width: 864px) {
+
+@media only screen and (max-width: 1000px) {
   .team-section {
     width: 100%;
   }
