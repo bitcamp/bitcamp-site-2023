@@ -114,7 +114,7 @@ export default {
   position: relative;
   background-color: #345793;
 
-  & > *:not(:last-child) {
+  & > *:not(:first-child):not(:last-child) {
     margin-bottom: 5rem !important;
   }
 }
