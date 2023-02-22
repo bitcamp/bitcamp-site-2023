@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <HelloWorld />
+    <Accomplishments />
   </div>
 </template>
 
