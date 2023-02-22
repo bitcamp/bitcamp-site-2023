@@ -33,7 +33,7 @@ footer {
   position: relative;
   box-sizing: border-box;
   width: 100vw;
-  height: 110vw;
+  height: 60vw;
   color: white;
   font-size: 1.125rem;
   line-height: 1.4;

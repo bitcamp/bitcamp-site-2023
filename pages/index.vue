@@ -136,7 +136,7 @@ img {
   position: absolute;
   right: 0;
   width: 80vw;
-  margin-top: -5vw;
+  margin-top: -10vw;
 }
 </style>
 
