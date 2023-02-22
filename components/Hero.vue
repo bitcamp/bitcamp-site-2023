@@ -1,6 +1,8 @@
 <template>
   <div id="hero" class="section">
-    <img class="hero-image" src="~/assets/images/hero.png" />
+    <div class="hero-image-wrapper">
+      <img class="hero-image" src="~/assets/images/hero.png" />
+    </div>
     <div class="header">
       <img src="/bitcamp-brand/logos/bitcamp.png" />
       <div class="header-content">
@@ -54,6 +56,14 @@ defineProps<{
   }
 }
 
+.hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .hero-image {
   position: absolute;
   top: -15vw;
@@ -64,7 +74,7 @@ defineProps<{
 
   @media (max-width: 576px) {
     top: 0;
-    width: 100%;
+    width: 200%;
   }
 }
 
