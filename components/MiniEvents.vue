@@ -4,9 +4,9 @@
 
     <div class="mini-events-container">
       <article class="card">
-        <img src="~/assets/svg/color-war.svg" alt="Color War Photo" />
+        <img src="~/assets/svg/color-war.svg" alt="Colorwar Photo" />
         <div class="text">
-          <h1>Color War</h1>
+          <h1>Colorwar</h1>
           <p>
             Colorwar is a rapid-fire live-design competition and one of the
             highlights of Bitcamp. Compete in our online design challenge for a
