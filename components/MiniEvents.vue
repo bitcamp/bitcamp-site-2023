@@ -15,7 +15,12 @@
           </p>
         </div>
         <span class="button-wrap">
-        <Button text="Learn More" link="https://bitcmp.medium.com/calling-all-creatives-for-colorwar-443f19759cc2" size="xl" color="#324A79" />
+          <Button
+            text="Learn More"
+            link="https://bitcmp.medium.com/calling-all-creatives-for-colorwar-443f19759cc2"
+            size="xl"
+            color="#324A79"
+          />
         </span>
       </article>
       <article class="card">
@@ -30,7 +35,12 @@
           </p>
         </div>
         <span class="button-wrap">
-        <Button text="Watch on YouTube" link="https://www.youtube.com/watch?v=jjP1iaQka9Y&ab_channel=Bitcamp" size="xl" color="#324A79" />
+          <Button
+            text="Watch on YouTube"
+            link="https://www.youtube.com/watch?v=jjP1iaQka9Y&ab_channel=Bitcamp"
+            size="xl"
+            color="#324A79"
+          />
         </span>
       </article>
     </div>
@@ -68,7 +78,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  
+
   margin: 0 auto;
 }
 .card {
