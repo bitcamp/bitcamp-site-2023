@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'SponsorshipProspectusSection',
+  name: 'ProspectusEmptyRow',
   props: {
     categoryName: {
       type: String,

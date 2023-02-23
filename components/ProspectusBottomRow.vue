@@ -6,7 +6,7 @@
       role="button"
       data-bs-toggle="popover"
       data-bs-content="Sponsors with this perk will get speaking time at the opening ceremony to discuss their company, their prize category, and anything else that they would like! Please keep in mind the designated time allotment for your tier when planning your presentation."
-      title="{{categoryName}}"
+      :title="categoryName"
     >
       <img
         src="../assets/img/sponsors/Custom/question-mark-black.svg"
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'SponsorshipProspectusSection',
+  name: 'ProspectusBottomRow',
   props: {
     args: {
       type: Array,

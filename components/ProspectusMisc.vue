@@ -1,55 +1,47 @@
 <template>
-  <div class="Rtable-cell Rtable-category-cell">
+  <div
+    class="Rtable-cell Rtable-category-cell"
+    :class="'Rtable-misc-category-cell-' + type"
+  >
     <a
       tabindex="0"
       class="btn btn-link question-btn"
       role="button"
       data-bs-toggle="popover"
       data-bs-content="Sponsors with this perk will get speaking time at the opening ceremony to discuss their company, their prize category, and anything else that they would like! Please keep in mind the designated time allotment for your tier when planning your presentation."
-      :title="categoryName"
+      :title="perk"
     >
       <img
         src="../assets/img/sponsors/Custom/question-mark-black.svg"
         alt="Question Mark"
       />
     </a>
-    {{ categoryName }}
+    {{ perk }}
   </div>
-  <div
-    v-for="(arg, index) in args"
-    :key="index"
-    class="Rtable-cell"
-    :class="'Rtable-cell-' + tierNames[index]"
-  >
-    <p v-if="arg === 'check-b'">
-      <img
-        src="../assets/img/sponsors/Custom/check-black.svg"
-        alt="Checkmark"
-      />
-    </p>
-    <p v-else-if="arg === 'check-w'">
-      <img
-        src="../assets/img/sponsors/Custom/check-white.svg"
-        alt="Checkmark"
-      />
-    </p>
-    <p v-else>{{ arg }}</p>
+  <div class="Rtable-cell Rtable-cell-misc" :class="'Rtable-misc-cell-' + type">
+    {{ price }}
   </div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
+  <div class="Rtable-cell Rtable-cell-blank"></div>
 </template>
 
 <script>
 export default {
-  name: 'ProspectusRow',
+  name: 'ProspectusFooter',
   props: {
-    args: {
-      type: Array,
+    perk: {
+      type: String,
       required: true,
     },
-    tierNames: {
-      type: Array,
+    price: {
+      type: String,
       required: true,
     },
-    categoryName: {
+    type: {
       type: String,
       required: true,
     },

@@ -458,7 +458,7 @@
               :args="['', '', '', '', '', 'check-w', '']"
             />
 
-            <div class="Rtable-cell Rtable-cell--foot Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Byte"></div>
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Kilo"></div>
             <div class="Rtable-cell Rtable-cell--foot Rtable-cell-Mega"></div>
@@ -469,21 +469,18 @@
               class="Rtable-cell Rtable-cell--foot Rtable-cell-Virtual"
             ></div>
 
-            <div
-              class="Rtable-cell Rtable-category-cell Rtable-cell--left mt-5"
-            >
-              Additional Prize Category
-            </div>
-            <div class="Rtable-cell Rtable-cell-Byte mt-5">$1,000</div>
-            <div class="Rtable-cell Rtable-category-cell mt-5">
-              Bitcamp Podcast
-            </div>
-            <div class="Rtable-cell Rtable-cell-Byte Rtable-cell--right mt-5">
-              $2,000
-            </div>
-          </div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell-blank"></div>
 
-          <section class="Rtable js-RtableTabs"></section>
+            <ProspectusMisc :perk="'Additional Prize Category'" :price="'$1,000'" :type="'head'" />
+            <ProspectusMisc :perk="'Bitcamp Podcast'" :price="'$2,000'" :type="'bottom'" />
+          </div>
 
           <hr class="divider" />
           <section class="ConnectSection">
@@ -581,6 +578,7 @@ $('.js-RtableTabs').responsiveTable();
   --color-border: white;
   --color-focus: cornflowerblue;
   --color-highlight: #ffaf3f;
+  --color-misc-category: #ededed;
   --icon-height: 18px;
 }
 </style>
@@ -613,6 +611,10 @@ hr.divider {
 
 .SupportTitle {
   color: var(--color-dark-text);
+}
+
+.SupportSection p {
+  font-size: 1.15rem;
 }
 
 h1,
@@ -679,7 +681,7 @@ h2 {
     overflow: hidden;
     border: solid 1px var(--color-border);
     font-family: Avenir;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     text-align: center;
@@ -750,6 +752,10 @@ h2 {
     background-color: var(--color-Virtual);
   }
 
+  .Rtable-cell-misc {
+    background-color: var(--color-misc-category);
+  }
+
   .Rtable-cell--foot {
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
@@ -789,6 +795,22 @@ h2 {
   .Rtable-category-cell.first-row {
     /* Extra padding to account for missing question mark image */
     padding-left: 38px;
+  }
+
+ .Rtable-misc-category-cell-head {
+    border-top-left-radius: var(--border-radius);
+ }
+
+ .Rtable-misc-category-cell-bottom {
+    border-bottom-left-radius: var(--border-radius);
+ }
+
+  .Rtable-misc-cell-head {
+    border-top-right-radius: var(--border-radius);
+  }
+  
+  .Rtable-misc-cell-bottom {
+    border-bottom-right-radius: var(--border-radius);
   }
 
   /* Question Popover
