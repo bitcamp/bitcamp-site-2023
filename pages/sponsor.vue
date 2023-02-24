@@ -63,27 +63,72 @@
           <h2>Sponsorship Prospectus</h2>
         </section>
         <section class="Rtable js-RtableTabs">
-          <ProspectusHeader
-            :tierNames="[
-              'Byte',
-              'Kilo',
-              'Mega',
-              'Giga',
-              'Tera',
-              'Peta',
-              'Virtual',
-            ]"
-            :prices="[
-              '$1,000',
-              '$4,000',
-              '$7,000',
-              '$10,000',
-              '$15,000',
-              '$25,000',
-              '$6,000',
-            ]"
-          />
+          <!-- <ProspectusHeader
+              :tierNames="[
+                'Byte',
+                'Kilo',
+                'Mega',
+                'Giga',
+                'Tera',
+                'Peta',
+                'Virtual',
+              ]"
+              :prices="[
+                '$1,000',
+                '$4,000',
+                '$7,000',
+                '$10,000',
+                '$15,000',
+                '$25,000',
+                '$6,000',
+              ]"
+            /> -->
           <div class="Rtable-grid">
+            <div class="Rtable-cell Rtable-cell-blank"></div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Byte">
+              Byte
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Kilo">
+              Kilo
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Mega">
+              Mega
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Giga">
+              Giga
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Tera">
+              Tera
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Peta">
+              Peta
+            </div>
+            <div class="Rtable-cell Rtable-cell--head Rtable-cell-Virtual">
+              Virtual
+            </div>
+
+            <ProspectusRow
+              :categoryName="'Contribution'"
+              :tierNames="[
+                'Byte',
+                'Kilo',
+                'Mega',
+                'Giga',
+                'Tera',
+                'Peta',
+                'Virtual',
+              ]"
+              :args="[
+                '$1,000',
+                '$4,000',
+                '$7,000',
+                '$10,000',
+                '$15,000',
+                '$25,000',
+                '$6,000',
+              ]"
+              :header="'first-row Rtable-category-cell-full'"
+            />
             <ProspectusEmptyRow :categoryName="'General'" />
             <ProspectusRow
               :categoryName="'Mentors at Event'"
@@ -478,8 +523,16 @@
             <div class="Rtable-cell Rtable-cell-blank"></div>
             <div class="Rtable-cell Rtable-cell-blank"></div>
 
-            <ProspectusMisc :perk="'Additional Prize Category'" :price="'$1,000'" :type="'head'" />
-            <ProspectusMisc :perk="'Bitcamp Podcast'" :price="'$2,000'" :type="'bottom'" />
+            <ProspectusMisc
+              :perk="'Additional Prize Category'"
+              :price="'$1,000'"
+              :type="'head'"
+            />
+            <ProspectusMisc
+              :perk="'Bitcamp Podcast'"
+              :price="'$2,000'"
+              :type="'bottom'"
+            />
           </div>
 
           <hr class="divider" />
@@ -660,25 +713,25 @@ h2 {
   /* Tables
 ================================== */
   .Rtable {
-    width: calc(100% + 2rem);
-    min-width: 40rem;
+    // width: calc(100% + 2rem);
+    // min-width: 40rem;
     margin-left: -1rem;
     padding: 0 1rem;
   }
-
   .Rtable-grid {
-    display: -ms-grid;
+    // display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2fr (1fr);
+    // -ms-grid-columns: 2fr (1fr);
+    overflow-x: auto;
     grid-template-columns: 2fr repeat(7, 1fr);
   }
 
   .Rtable-cell {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    // -webkit-box-flex: 1;
+    // -ms-flex-positive: 1;
+    // flex-grow: 1;
     padding: 0.5em 0.5em;
-    overflow: hidden;
+    // overflow: hidden;
     border: solid 1px var(--color-border);
     font-family: Avenir;
     font-weight: 400;
@@ -763,6 +816,13 @@ h2 {
     border-bottom: 0;
   }
 
+  .Rtable-cell--head {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    min-height: 30px;
+    border-bottom: 0;
+  }
+
   .Rtable-cell-blank {
     background-color: transparent;
   }
@@ -797,18 +857,18 @@ h2 {
     padding-left: 38px;
   }
 
- .Rtable-misc-category-cell-head {
+  .Rtable-misc-category-cell-head {
     border-top-left-radius: var(--border-radius);
- }
+  }
 
- .Rtable-misc-category-cell-bottom {
+  .Rtable-misc-category-cell-bottom {
     border-bottom-left-radius: var(--border-radius);
- }
+  }
 
   .Rtable-misc-cell-head {
     border-top-right-radius: var(--border-radius);
   }
-  
+
   .Rtable-misc-cell-bottom {
     border-bottom-right-radius: var(--border-radius);
   }
@@ -969,79 +1029,79 @@ h2 {
 
   /* Tab Styling
 ====================================== */
-  .Tablist {
-    display: none;
-  }
+  // .Tablist {
+  //   display: none;
+  // }
 
-  @media all and (max-width: 768px) {
-    .Tablist {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      width: 100%;
-      -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-      justify-content: stretch;
-    }
-  }
+  // @media all and (max-width: 768px) {
+  //   .Tablist {
+  //     display: -webkit-box;
+  //     display: -ms-flexbox;
+  //     display: flex;
+  //     -webkit-box-orient: horizontal;
+  //     -webkit-box-direction: normal;
+  //     -ms-flex-direction: row;
+  //     flex-direction: row;
+  //     width: 100%;
+  //     -webkit-box-pack: stretch;
+  //     -ms-flex-pack: stretch;
+  //     justify-content: stretch;
+  //   }
+  // }
 
-  .Tab {
-    font-family: Avenir;
-    width: 25%;
-    text-align: center;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    padding: 0.5em 0;
-    border: 0;
-    border-top: 2px solid transparent;
-    font-weight: 800;
-    color: var(--color-dark-text);
-    text-decoration: none;
-    cursor: pointer;
-    outline: 0;
-  }
+  // .Tab {
+  //   font-family: Avenir;
+  //   width: 25%;
+  //   text-align: center;
+  //   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  //   padding: 0.5em 0;
+  //   border: 0;
+  //   border-top: 2px solid transparent;
+  //   font-weight: 800;
+  //   color: var(--color-dark-text);
+  //   text-decoration: none;
+  //   cursor: pointer;
+  //   outline: 0;
+  // }
 
-  .Tab.Byte {
-    background-color: var(--color-Byte);
-  }
+  // .Tab.Byte {
+  //   background-color: var(--color-Byte);
+  // }
 
-  .Tab.Kilo {
-    background-color: var(--color-Kilo);
-  }
+  // .Tab.Kilo {
+  //   background-color: var(--color-Kilo);
+  // }
 
-  .Tab.Mega {
-    background-color: var(--color-Mega);
-    color: var(--color-light-text);
-  }
+  // .Tab.Mega {
+  //   background-color: var(--color-Mega);
+  //   color: var(--color-light-text);
+  // }
 
-  .Tab.Giga {
-    background-color: var(--color-Giga);
-    color: var(--color-light-text);
-  }
+  // .Tab.Giga {
+  //   background-color: var(--color-Giga);
+  //   color: var(--color-light-text);
+  // }
 
-  .Tab.Tera {
-    background-color: var(--color-Tera);
-    color: var(--color-light-text);
-  }
+  // .Tab.Tera {
+  //   background-color: var(--color-Tera);
+  //   color: var(--color-light-text);
+  // }
 
-  .Tab:active,
-  .Tab:hover,
-  .Tab:focus {
-    border: 2px solid var(--color-focus);
-    -webkit-box-shadow: 0px 0px 3px var(--color-focus);
-    box-shadow: 0px 0px 3px var(--color-focus);
-    -webkit-clip-path: inset(-3px -3px 0px -3px);
-    clip-path: inset(-3px -3px 0px -3px);
-    border-bottom: 0;
-    outline: 0;
-  }
+  // .Tab:active,
+  // .Tab:hover,
+  // .Tab:focus {
+  //   border: 2px solid var(--color-focus);
+  //   -webkit-box-shadow: 0px 0px 3px var(--color-focus);
+  //   box-shadow: 0px 0px 3px var(--color-focus);
+  //   -webkit-clip-path: inset(-3px -3px 0px -3px);
+  //   clip-path: inset(-3px -3px 0px -3px);
+  //   border-bottom: 0;
+  //   outline: 0;
+  // }
 
-  .Tab[aria-selected='true'] {
-    cursor: default;
-  }
+  // .Tab[aria-selected='true'] {
+  //   cursor: default;
+  // }
 
   /* Connect Section
 =================================== */
