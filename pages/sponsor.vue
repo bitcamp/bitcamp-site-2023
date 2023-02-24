@@ -534,11 +534,9 @@
               :type="'bottom'"
             />
           </div>
-
           <hr class="divider" />
           <section class="ConnectSection">
             <h2>Connect</h2>
-
             <div>
               <img
                 src="../assets/img/sponsors/Custom/globe.svg"
@@ -839,6 +837,7 @@ h2 {
   .Rtable-category-cell-full {
     border-radius: var(--border-radius) 0 0 var(--border-radius);
     text-align: center;
+    font-weight: bolder;
   }
 
   .Rtable-category-cell.title-row {
