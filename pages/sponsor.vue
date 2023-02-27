@@ -888,15 +888,11 @@ h2 {
   }
 
   .Rtable-misc-category-cell-head {
-    .Rtable-misc-category-cell-head {
       border-top-left-radius: var(--border-radius);
-    }
   }
 
   .Rtable-misc-category-cell-bottom {
-    .Rtable-misc-category-cell-bottom {
       border-bottom-left-radius: var(--border-radius);
-    }
   }
 
   .Rtable-misc-cell-head {
