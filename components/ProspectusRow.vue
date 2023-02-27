@@ -1,6 +1,7 @@
 <template>
-  <div class="Rtable-cell Rtable-category-cell">
+  <div class="Rtable-cell Rtable-category-cell" :class="header">
     <a
+      v-if="header !== 'first-row Rtable-category-cell-full'"
       tabindex="0"
       class="btn btn-link question-btn"
       role="button"
@@ -52,6 +53,10 @@ export default {
     categoryName: {
       type: String,
       required: true,
+    },
+    header: {
+      type: String,
+      required: false,
     },
     description: {
       type: String,
