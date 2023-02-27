@@ -582,19 +582,16 @@
 </template>
 
 <script lang="ts">
-
 export default {
   name: 'SponsorPage',
   methods: {
     greet() {
-    // `this` inside methods points to the current active instance
-    alert(`Hello!`)
-    // `event` is the native DOM event
-  }
-  }
+      // `this` inside methods points to the current active instance
+      alert(`Hello!`);
+      // `event` is the native DOM event
+    },
+  },
 };
-
-
 </script>
 
 <!-- <script type="module">
@@ -891,21 +888,20 @@ h2 {
   }
 
   .Rtable-misc-category-cell-head {
-  .Rtable-misc-category-cell-head {
-    border-top-left-radius: var(--border-radius);
-  }
+    .Rtable-misc-category-cell-head {
+      border-top-left-radius: var(--border-radius);
+    }
   }
 
   .Rtable-misc-category-cell-bottom {
-  .Rtable-misc-category-cell-bottom {
-    border-bottom-left-radius: var(--border-radius);
-  }
+    .Rtable-misc-category-cell-bottom {
+      border-bottom-left-radius: var(--border-radius);
+    }
   }
 
   .Rtable-misc-cell-head {
     border-top-right-radius: var(--border-radius);
   }
-
 
   .Rtable-misc-cell-bottom {
     border-bottom-right-radius: var(--border-radius);

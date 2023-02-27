@@ -11,7 +11,8 @@
       data-bs-content="Sponsors with this perk will get speaking time at the opening ceremony to discuss their company, their prize category, and anything else that they would like! Please keep in mind the designated time allotment for your tier when planning your presentation."
       :title="perk"
     >
-      <img @click="greet(description)"
+      <img
+        @click="greet(description)"
         src="../assets/img/sponsors/Custom/question-mark-black.svg"
         alt="Question Mark"
       />
@@ -47,16 +48,16 @@ export default {
     },
     description: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     greet(elem) {
-    // `this` inside methods points to the current active instance
-    alert(elem)
-    // `event` is the native DOM event
-  }
-}
+      // `this` inside methods points to the current active instance
+      alert(elem);
+      // `event` is the native DOM event
+    },
+  },
 };
 </script>
 
