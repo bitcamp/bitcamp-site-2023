@@ -59,6 +59,7 @@
           </p>
           <p>Best,</p>
           <p>The Bitcamp Team</p>
+          <div class="tooltip left">Hello</div>
           <hr class="divider" />
           <h2>Sponsorship Prospectus</h2>
         </section>
@@ -682,6 +683,7 @@ a {
 ================================== */
 main {
   padding: 2rem 0;
+  display: flex !important;
 }
 
 hr.divider {
@@ -888,11 +890,11 @@ h2 {
   }
 
   .Rtable-misc-category-cell-head {
-      border-top-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
   }
 
   .Rtable-misc-category-cell-bottom {
-      border-bottom-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
   }
 
   .Rtable-misc-cell-head {
@@ -1148,6 +1150,57 @@ h2 {
     margin-right: 0.75em;
     width: 1em;
     line-height: 0;
+  }
+
+  .tooltip {
+    background-color: #ffaffc;
+    border-radius: 10px;
+    padding: 10px 15px;
+    position: relative;
+    margin: 15px;
+    text-align: center;
+  }
+
+  .tooltip::after {
+    background-color: #333;
+    border-radius: 10px;
+    color: #b254ff;
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .tooltip::before {
+    background-color: #333;
+    content: ' ';
+    display: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 999;
+  }
+
+  .tooltip:hover::after {
+    display: block !important;
+  }
+
+  .tooltip:hover::before {
+    display: block !important;
+  }
+
+  .tooltip.left::after {
+    content: 'left';
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-100% - 10px));
+  }
+
+  .tooltip.left::before {
+    top: 50%;
+    left: 0;
+    transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
   }
 }
 </style>
