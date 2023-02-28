@@ -59,7 +59,7 @@
           </p>
           <p>Best,</p>
           <p>The Bitcamp Team</p>
-          <div class="tooltip left">Hello</div>
+          <div class="tooltips left">Hello</div>
           <hr class="divider" />
           <h2>Sponsorship Prospectus</h2>
         </section>
@@ -585,13 +585,13 @@
 <script lang="ts">
 export default {
   name: 'SponsorPage',
-  methods: {
-    greet() {
-      // `this` inside methods points to the current active instance
-      alert(`Hello!`);
-      // `event` is the native DOM event
-    },
-  },
+  // methods: {
+  //   greet() {
+  //     // `this` inside methods points to the current active instance
+  //     alert(`Hello!`);
+  //     // `event` is the native DOM event
+  //   },
+  // },
 };
 </script>
 
@@ -1152,16 +1152,18 @@ h2 {
     line-height: 0;
   }
 
-  .tooltip {
-    background-color: #ffaffc;
-    border-radius: 10px;
-    padding: 10px 15px;
+  .tooltips {
+    // background-color: #ffaffc;
+    // border-radius: 10px;
+    padding: 10px;
     position: relative;
-    margin: 15px;
+    // margin: 15px;
     text-align: center;
+    // padding: 0.25em;
+    // margin-right: 0.25em;
   }
 
-  .tooltip::after {
+  .tooltips::after {
     background-color: #333;
     border-radius: 10px;
     color: #b254ff;
@@ -1172,7 +1174,7 @@ h2 {
     z-index: 999;
   }
 
-  .tooltip::before {
+  .tooltips::before {
     background-color: #333;
     content: ' ';
     display: none;
@@ -1182,22 +1184,22 @@ h2 {
     z-index: 999;
   }
 
-  .tooltip:hover::after {
+  .tooltips:hover::after {
     display: block !important;
   }
 
-  .tooltip:hover::before {
+  .tooltips:hover::before {
     display: block !important;
   }
 
-  .tooltip.left::after {
+  .tooltips.left::after {
     content: 'left';
     top: 0;
     left: 0;
     transform: translateX(calc(-100% - 10px));
   }
 
-  .tooltip.left::before {
+  .tooltips.left::before {
     top: 50%;
     left: 0;
     transform: translate(calc(-100% - 5px), -50%) rotate(45deg);

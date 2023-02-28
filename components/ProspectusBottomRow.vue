@@ -1,5 +1,5 @@
 <template>
-  <div class="Rtable-cell Rtable-category-cell Rtable-category-cell-bottom">
+  <!-- <div class="Rtable-cell Rtable-category-cell Rtable-category-cell-bottom">
     <a
       tabindex="0"
       class="btn btn-link question-btn"
@@ -15,7 +15,22 @@
       />
     </a>
     {{ categoryName }}
+  </div> -->
+
+  <div class="Rtable-cell Rtable-category-cell Rtable-category-cell-bottom">
+    <a
+      class="tooltips left"
+      :title="categoryName"
+    >
+      <img
+        src="../assets/img/sponsors/Custom/question-mark-black.svg"
+        alt="Question Mark"
+      />
+    </a>
+    {{ categoryName }}
   </div>
+
+
   <div
     v-for="(arg, index) in args"
     :key="index"
@@ -59,13 +74,13 @@ export default {
       required: true,
     },
   },
-  methods: {
-    greet(elem) {
-      // `this` inside methods points to the current active instance
-      alert(elem);
-      // `event` is the native DOM event
-    },
-  },
+  // methods: {
+  //   greet(elem) {
+  //     // `this` inside methods points to the current active instance
+  //     alert(elem);
+  //     // `event` is the native DOM event
+  //   },
+  // },
 };
 </script>
 

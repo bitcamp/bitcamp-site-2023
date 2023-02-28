@@ -1,5 +1,5 @@
 <template>
-  <div
+  <!-- <div
     class="Rtable-cell Rtable-category-cell"
     :class="'Rtable-misc-category-cell-' + type"
   >
@@ -18,7 +18,23 @@
       />
     </a>
     {{ perk }}
+  </div> -->
+  <div
+    class="Rtable-cell Rtable-category-cell"
+    :class="'Rtable-misc-category-cell-' + type"
+  >
+    <a
+      class="tooltips left"
+      :title="perk"
+    >
+      <img
+        src="../assets/img/sponsors/Custom/question-mark-black.svg"
+        alt="Question Mark"
+      />
+    </a>
+    {{ perk }}
   </div>
+  
   <div class="Rtable-cell Rtable-cell-misc" :class="'Rtable-misc-cell-' + type">
     {{ price }}
   </div>
@@ -51,13 +67,13 @@ export default {
       required: true,
     },
   },
-  methods: {
-    greet(elem) {
-      // `this` inside methods points to the current active instance
-      alert(elem);
-      // `event` is the native DOM event
-    },
-  },
+  // methods: {
+  //   greet(elem) {
+  //     // `this` inside methods points to the current active instance
+  //     alert(elem);
+  //     // `event` is the native DOM event
+  //   },
+  // },
 };
 </script>
 
