@@ -19,7 +19,7 @@
             text="Learn More"
             link="https://bitcmp.medium.com/calling-all-creatives-for-colorwar-443f19759cc2"
             size="xl"
-            color="var(--color-midnight)"
+            color="#10274f"
           />
         </span>
       </article>
@@ -39,7 +39,7 @@
             text="Watch on YouTube"
             link="https://www.youtube.com/watch?v=jjP1iaQka9Y&ab_channel=Bitcamp"
             size="xl"
-            color="var(--color-midnight)"
+            color="#10274f"
           />
         </span>
       </article>

@@ -74,7 +74,7 @@ withDefaults(defineProps<Props>(), {
 
 .medium {
   width: 95px;
-  height: 30px;
+  height: 35px;
   font-size: 16px;
   line-height: 24px;
 }

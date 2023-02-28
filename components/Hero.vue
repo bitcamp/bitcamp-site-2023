@@ -13,20 +13,26 @@
           <Button
             text="Hacker"
             link="https://register.bit.camp"
-            size="large"
-          ></Button>
+            size="medium"
+          />
           <Button
             text="Volunteer"
             link="https://forms.gle/kyQwDzX7UKDEwa7b9"
-            size="large"
-            color="#324A79"
-          ></Button>
+            size="medium"
+            color="#10274f"
+          />
           <Button
             text="Mentor"
             link="https://forms.gle/kP2nrzPzwd6PD8nLA"
-            size="large"
+            size="medium"
+            color="#324A79"
+          />
+          <Button
+            text="Workshop"
+            link="https://forms.gle/KR5wRDQrNHhuPJRt9"
+            size="medium"
             color="#8F9EBC"
-          ></Button>
+          />
         </div>
       </div>
     </div>
@@ -145,9 +151,13 @@ defineProps<{
 
       .header-button-container {
         width: fit-content;
-        height: 140px;
         flex-direction: column;
         margin: 0 auto;
+        gap: 0.75rem;
+
+        & :deep(.button) {
+          width: 130px !important;
+        }
       }
     }
   }
