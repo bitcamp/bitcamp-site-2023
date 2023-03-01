@@ -582,14 +582,13 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
 useHead({
   title: 'Bitcamp | Sponsor Prospectus',
   meta: [
     {
       name: 'description',
-      content: "",
+      content: '',
     },
     {
       property: 'og:title',
@@ -605,8 +604,7 @@ useHead({
     },
     {
       property: 'og:description',
-      content:
-      "",
+      content: '',
     },
     {
       property: 'og:type',
@@ -626,8 +624,7 @@ useHead({
     },
     {
       property: 'twitter:description',
-      content:
-      "",
+      content: '',
     },
     {
       name: 'msapplication-TileColor',
@@ -843,7 +840,7 @@ h2 {
     // display: -ms-grid;
     display: grid;
     // -ms-grid-columns: 2fr (1fr);
-    overflow-x: auto;
+    // overflow-x: auto;
     grid-template-columns: 2fr repeat(7, 1fr);
   }
 
