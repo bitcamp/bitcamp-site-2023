@@ -57,8 +57,8 @@
           <p>
             Our newest track! If you’re wowed by recent AI advancements like
             ChatGPT, this is the track for you! We will have ML-related
-            workshops, guest speakers, and activities (basic programming skills
-            highly recommended).
+            workshops, guest speakers, and activities (basic Python programming
+            skills highly recommended).
           </p>
         </div>
       </article>
