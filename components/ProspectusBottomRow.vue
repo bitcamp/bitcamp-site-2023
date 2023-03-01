@@ -21,6 +21,7 @@
     <a
       class="tooltips left"
       :title="categoryName"
+      :description="description"
     >
       <img
         src="../assets/img/sponsors/Custom/question-mark-black.svg"

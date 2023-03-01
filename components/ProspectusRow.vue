@@ -21,6 +21,7 @@
     <a
       v-if="header !== 'first-row Rtable-category-cell-full'"
       class="tooltips left"
+      :description="description"
       :title="categoryName"
     >
       <img

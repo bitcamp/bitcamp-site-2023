@@ -59,7 +59,6 @@
           </p>
           <p>Best,</p>
           <p>The Bitcamp Team</p>
-          <div class="tooltips left">Hello</div>
           <hr class="divider" />
           <h2>Sponsorship Prospectus</h2>
         </section>
@@ -1251,25 +1250,28 @@ h2 {
   }
 
   .tooltips::after {
-    background-color: #333;
-    border-radius: 10px;
-    color: #b254ff;
+    border-radius: var(--border-radius);
+    border: solid 2px var(--color-highlight);
     display: none;
-    padding: 10px 15px;
+    padding: 1em;
+    min-width: 200px;
     position: absolute;
-    text-align: center;
+    text-align: left;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     z-index: 999;
+    font-size: small;
   }
 
-  .tooltips::before {
-    background-color: #333;
-    content: ' ';
-    display: none;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    z-index: 999;
-  }
+  // .tooltips::before {
+  //   // background-color: #333;
+  //   // content: ' ';
+  //   display: none;
+  //   position: absolute;
+  //   width: 15px;
+  //   height: 15px;
+  //   z-index: 999;
+  // }
 
   .tooltips:hover::after {
     display: block !important;
@@ -1280,10 +1282,11 @@ h2 {
   }
 
   .tooltips.left::after {
-    content: 'left';
+    content: attr(description);
+    white-space: pre-wrap;
     top: 0;
     left: 0;
-    transform: translateX(calc(-100% - 10px));
+    transform: translateX(calc(-100% - 30px)) translateY(-50%);
   }
 
   .tooltips.left::before {

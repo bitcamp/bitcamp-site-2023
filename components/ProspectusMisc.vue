@@ -26,6 +26,7 @@
     <a
       class="tooltips left"
       :title="perk"
+      :description="description"
     >
       <img
         src="../assets/img/sponsors/Custom/question-mark-black.svg"
