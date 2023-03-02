@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'SponsorshipProspectusSection',
+  name: 'ProspectusHeader',
   props: {
     tierNames: {
       type: Array,
