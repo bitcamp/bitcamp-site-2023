@@ -20,7 +20,7 @@
   <div class="Rtable-cell Rtable-category-cell" :class="header">
     <a
       v-if="header !== 'first-row Rtable-category-cell-full'"
-      class="tooltips left"
+      class="tooltips direction"
       :description="description"
       :title="categoryName"
     >

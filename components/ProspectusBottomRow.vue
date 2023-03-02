@@ -19,7 +19,7 @@
 
   <div class="Rtable-cell Rtable-category-cell Rtable-category-cell-bottom">
     <a
-      class="tooltips left"
+      class="tooltips direction"
       :title="categoryName"
       :description="description"
     >

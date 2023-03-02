@@ -24,7 +24,7 @@
     :class="'Rtable-misc-category-cell-' + type"
   >
     <a
-      class="tooltips left"
+      class="tooltips direction"
       :title="perk"
       :description="description"
     >

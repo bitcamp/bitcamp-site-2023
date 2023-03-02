@@ -1245,16 +1245,19 @@ h2 {
     position: relative;
     // margin: 15px;
     text-align: center;
+    cursor: pointer;
     // padding: 0.25em;
     // margin-right: 0.25em;
   }
 
   .tooltips::after {
+    background-color: #ffffff;
     border-radius: var(--border-radius);
     border: solid 2px var(--color-highlight);
     display: none;
     padding: 1em;
-    min-width: 200px;
+    width: 200px;
+    min-width: 20vw;
     position: absolute;
     text-align: left;
     padding-top: 1.5em;
@@ -1281,18 +1284,25 @@ h2 {
     display: block !important;
   }
 
-  .tooltips.left::after {
+  .tooltips.direction::after {
+    // LEFT
     content: attr(description);
-    white-space: pre-wrap;
     top: 0;
     left: 0;
     transform: translateX(calc(-100% - 30px)) translateY(-50%);
   }
 
-  .tooltips.left::before {
-    top: 50%;
-    left: 0;
-    transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
+  @media screen and (max-width: 768px) {
+    .Rtable-grid {
+      overflow-x: auto;
+    }
+    .tooltips.direction::after {
+      //RIGHT
+      content: attr(description);
+      top: 0;
+      right: 0;
+      transform: translateY(-50%) translateX(35px);
+    }
   }
 }
 </style>
