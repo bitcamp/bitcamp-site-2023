@@ -671,64 +671,8 @@ useHead({
 <script lang="ts">
 export default {
   name: 'SponsorPage',
-  // methods: {
-  //   greet() {
-  //     // `this` inside methods points to the current active instance
-  //     alert(`Hello!`);
-  //     // `event` is the native DOM event
-  //   },
-  // },
 };
 </script>
-
-<!-- <script type="module">
-import $ from 'jquery';
-(function ($) {
-  'use strict';
-  $.fn.responsiveTable = function () {
-    var toggleColumns = function ($table) {
-      var selectedCol;
-      var colNames = [];
-
-      // Find current tab
-      $table.find('.Tab').each(function () {
-        if ($(this).attr('aria-selected') === 'true') {
-          selectedCol = $(this).text();
-        }
-        colNames.push($(this).text());
-      });
-
-      // Set the specified tab as active on the larger table and all table cells
-      colNames.forEach((name) => {
-        if (name === selectedCol) {
-          $table.addClass(`${name}-active`);
-          $table.find(`.Rtable-cell-${name}`).removeClass('hiddenSmall');
-        } else {
-          $table.removeClass(`${name}-active`);
-          $table.find(`.Rtable-cell-${name}`).addClass('hiddenSmall');
-        }
-      });
-    };
-
-    $(this).each(function () {
-      toggleColumns($(this));
-    });
-
-    $(this)
-      .find('.Tab')
-      .click(function () {
-        $(this)
-          .blur()
-          .attr('aria-selected', 'true')
-          .siblings()
-          .attr('aria-selected', 'false');
-        toggleColumns($(this).parents('.Rtable'));
-      });
-  };
-})(jQuery);
-
-$('.js-RtableTabs').responsiveTable();
-</script> -->
 
 <style>
 :root {
@@ -830,25 +774,16 @@ h2 {
   /* Tables
 ================================== */
   .Rtable {
-    // width: calc(100% + 2rem);
-    // min-width: 40rem;
     margin-left: -1rem;
     padding: 0 1rem;
   }
   .Rtable-grid {
-    // display: -ms-grid;
     display: grid;
-    // -ms-grid-columns: 2fr (1fr);
-    // overflow-x: auto;
     grid-template-columns: 2fr repeat(7, 1fr);
   }
 
   .Rtable-cell {
-    // -webkit-box-flex: 1;
-    // -ms-flex-positive: 1;
-    // flex-grow: 1;
     padding: 0.5em 0.5em;
-    // overflow: hidden;
     border: solid 1px var(--color-border);
     font-family: Avenir;
     font-weight: 400;
@@ -1071,15 +1006,6 @@ h2 {
   /* Responsive
 ==================================== */
   @media all and (max-width: 768px) {
-    /* .Rtable-grid {
-      -ms-grid-columns: 1.75fr 1fr;
-      grid-template-columns: 1.75fr 1fr;
-      -webkit-transition: background-color 250ms ease-in-out;
-      -o-transition: background-color 250ms ease-in-out;
-      transition: background-color 250ms ease-in-out;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-    } */
-
     /* Cell Colors
   ==================================== */
     .Rtable.Byte-active .Rtable-grid {
@@ -1108,16 +1034,6 @@ h2 {
       color: var(--color-light-text);
     }
 
-    /* Cell Styles
-  ==================================== */
-    /* .Rtable-cell {
-      background-color: transparent;
-      border-left: 0;
-      border-right: 0;
-      border-width: 1.5px;
-      border-radius: 0;
-    } */
-
     .Rtable-cell.first-row {
       border-top: 0;
     }
@@ -1130,96 +1046,7 @@ h2 {
       /* border-radius: 0; */
       border-right: 2px solid var(--color-border);
     }
-
-    /* .Rtable-category-cell-full {
-      border-radius: 0;
-    } */
-
-    /* Hidden Cells
-  ==================================== */
-    /* .Rtable-cell.title-row,
-    .Rtable-cell--head,
-    .Rtable-cell--foot,
-    .hiddenSmall {
-      display: none;
-    } */
   }
-
-  /* Tab Styling
-====================================== */
-  // .Tablist {
-  //   display: none;
-  // }
-
-  // @media all and (max-width: 768px) {
-  //   .Tablist {
-  //     display: -webkit-box;
-  //     display: -ms-flexbox;
-  //     display: flex;
-  //     -webkit-box-orient: horizontal;
-  //     -webkit-box-direction: normal;
-  //     -ms-flex-direction: row;
-  //     flex-direction: row;
-  //     width: 100%;
-  //     -webkit-box-pack: stretch;
-  //     -ms-flex-pack: stretch;
-  //     justify-content: stretch;
-  //   }
-  // }
-
-  // .Tab {
-  //   font-family: Avenir;
-  //   width: 25%;
-  //   text-align: center;
-  //   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  //   padding: 0.5em 0;
-  //   border: 0;
-  //   border-top: 2px solid transparent;
-  //   font-weight: 800;
-  //   color: var(--color-dark-text);
-  //   text-decoration: none;
-  //   cursor: pointer;
-  //   outline: 0;
-  // }
-
-  // .Tab.Byte {
-  //   background-color: var(--color-Byte);
-  // }
-
-  // .Tab.Kilo {
-  //   background-color: var(--color-Kilo);
-  // }
-
-  // .Tab.Mega {
-  //   background-color: var(--color-Mega);
-  //   color: var(--color-light-text);
-  // }
-
-  // .Tab.Giga {
-  //   background-color: var(--color-Giga);
-  //   color: var(--color-light-text);
-  // }
-
-  // .Tab.Tera {
-  //   background-color: var(--color-Tera);
-  //   color: var(--color-light-text);
-  // }
-
-  // .Tab:active,
-  // .Tab:hover,
-  // .Tab:focus {
-  //   border: 2px solid var(--color-focus);
-  //   -webkit-box-shadow: 0px 0px 3px var(--color-focus);
-  //   box-shadow: 0px 0px 3px var(--color-focus);
-  //   -webkit-clip-path: inset(-3px -3px 0px -3px);
-  //   clip-path: inset(-3px -3px 0px -3px);
-  //   border-bottom: 0;
-  //   outline: 0;
-  // }
-
-  // .Tab[aria-selected='true'] {
-  //   cursor: default;
-  // }
 
   /* Connect Section
 =================================== */
@@ -1239,15 +1066,10 @@ h2 {
   }
 
   .tooltips {
-    // background-color: #ffaffc;
-    // border-radius: 10px;
     padding: 10px;
     position: relative;
-    // margin: 15px;
     text-align: center;
     cursor: pointer;
-    // padding: 0.25em;
-    // margin-right: 0.25em;
   }
 
   .tooltips::after {
@@ -1256,8 +1078,8 @@ h2 {
     border: solid 2px var(--color-highlight);
     display: none;
     padding: 1em;
-    width: 200px;
-    min-width: 20vw;
+    width: 180px;
+    min-width: 18vw;
     position: absolute;
     text-align: left;
     padding-top: 1.5em;
@@ -1265,17 +1087,6 @@ h2 {
     z-index: 999;
     font-size: small;
   }
-
-  // .tooltips::before {
-  //   // background-color: #333;
-  //   // content: ' ';
-  //   display: none;
-  //   position: absolute;
-  //   width: 15px;
-  //   height: 15px;
-  //   z-index: 999;
-  // }
-
   .tooltips:hover::after {
     display: block !important;
   }
@@ -1283,7 +1094,6 @@ h2 {
   .tooltips:hover::before {
     display: block !important;
   }
-
   .tooltips.direction::after {
     // LEFT
     content: attr(description);
@@ -1292,7 +1102,7 @@ h2 {
     transform: translateX(calc(-100% - 30px)) translateY(-50%);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .Rtable-grid {
       overflow-x: auto;
     }

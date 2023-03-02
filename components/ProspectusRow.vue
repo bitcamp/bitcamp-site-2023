@@ -1,22 +1,4 @@
 <template>
-  <!-- <div class="Rtable-cell Rtable-category-cell" :class="header">
-    <a
-      v-if="header !== 'first-row Rtable-category-cell-full'"
-      tabindex="0"
-      class="btn btn-link question-btn tooltips left"
-      role="button"
-      data-bs-toggle="popover"
-      data-bs-content="Sponsors with this perk will get speaking time at the opening ceremony to discuss their company, their prize category, and anything else that they would like! Please keep in mind the designated time allotment for your tier when planning your presentation."
-      :title="categoryName"
-    >
-      <img
-        @click="greet(description)"
-        src="../assets/img/sponsors/Custom/question-mark-black.svg"
-        alt="Question Mark"
-      />
-    </a>
-    {{ categoryName }}
-  </div> -->
   <div class="Rtable-cell Rtable-category-cell" :class="header">
     <a
       v-if="header !== 'first-row Rtable-category-cell-full'"
@@ -79,13 +61,6 @@ export default {
       required: true,
     },
   },
-  // methods: {
-  //   greet(elem) {
-  //     // `this` inside methods points to the current active instance
-  //     alert(elem);
-  //     // `event` is the native DOM event
-  //   },
-  // },
 };
 </script>
 
