@@ -46,7 +46,9 @@
             Hackers will delve into the field of quantum computing with
             exclusive mentors, sponsors, and workshops! Hackers will use their
             knowledge of Python and other computing skills on educational and
-            interactive Quantum Track activities.
+            interactive Quantum Track activities. If you’ve been a previous
+            participant of the Quantum track, there will be new, challenging
+            prompts for you to tackle!
           </p>
         </div>
       </article>
