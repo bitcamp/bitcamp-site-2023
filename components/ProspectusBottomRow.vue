@@ -1,12 +1,9 @@
 <template>
   <div class="Rtable-cell Rtable-category-cell Rtable-category-cell-bottom">
     <a
-      tabindex="0"
-      class="btn btn-link question-btn"
-      role="button"
-      data-bs-toggle="popover"
-      data-bs-content="Sponsors with this perk will get speaking time at the opening ceremony to discuss their company, their prize category, and anything else that they would like! Please keep in mind the designated time allotment for your tier when planning your presentation."
-      title="{{categoryName}}"
+      class="tooltips direction"
+      :title="categoryName"
+      :description="description"
     >
       <img
         src="../assets/img/sponsors/Custom/question-mark-black.svg"
@@ -15,6 +12,7 @@
     </a>
     {{ categoryName }}
   </div>
+
   <div
     v-for="(arg, index) in args"
     :key="index"
@@ -39,7 +37,7 @@
 
 <script>
 export default {
-  name: 'SponsorshipProspectusSection',
+  name: 'ProspectusBottomRow',
   props: {
     args: {
       type: Array,
@@ -50,6 +48,10 @@ export default {
       required: true,
     },
     categoryName: {
+      type: String,
+      required: true,
+    },
+    description: {
       type: String,
       required: true,
     },
