@@ -1,6 +1,6 @@
 <template>
   <a class="logo-sponsor" :href="url">
-    <img :src="`_nuxt/assets/images/sponsors/${name}.png`" :alt="name" />
+    <img :src="`~/assets/images/sponsors/${name}.png`" :alt="name" />
   </a>
 </template>
 
