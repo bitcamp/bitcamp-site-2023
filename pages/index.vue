@@ -4,11 +4,12 @@
     <Hero />
     <Accomplishments />
     <Tracks />
-    <img class="cloud-1" src="~/assets/images/cloud1.png" />
+    <img class="cloud-1" src="~/assets/images/background/cloud1.png" />
     <MiniEvents />
     <CampfireGames />
-    <img class="cloud-2" src="~/assets/images/cloud2.png" />
+    <img class="cloud-2" src="~/assets/images/background/cloud2.png" />
     <FAQ />
+    <Sponsors />
     <Footer />
   </div>
 </template>

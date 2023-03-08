@@ -4,7 +4,10 @@
 
     <div class="tracks-container">
       <article class="card">
-        <img src="~/assets/svg/general.svg" alt="General Track Photo" />
+        <img
+          src="~/assets/images/tracks/general.svg"
+          alt="General Track Photo"
+        />
         <div class="text">
           <h1>General Track</h1>
           <p>
@@ -15,7 +18,10 @@
         </div>
       </article>
       <article class="card">
-        <img src="~/assets/svg/beginner.svg" alt="Beginner Track Photo" />
+        <img
+          src="~/assets/images/tracks/beginner.svg"
+          alt="Beginner Track Photo"
+        />
         <div class="text">
           <h1>Beginner Track</h1>
           <p>
@@ -27,7 +33,10 @@
         </div>
       </article>
       <article class="card">
-        <img src="~/assets/svg/hardware.svg" alt="Hardware Track Photo" />
+        <img
+          src="~/assets/images/tracks/hardware.svg"
+          alt="Hardware Track Photo"
+        />
         <div class="text">
           <h1>Hardware Track</h1>
           <p>
@@ -39,7 +48,10 @@
         </div>
       </article>
       <article class="card">
-        <img src="~/assets/svg/quantum.svg" alt="Quantum Track Photo" />
+        <img
+          src="~/assets/images/tracks/quantum.svg"
+          alt="Quantum Track Photo"
+        />
         <div class="text">
           <h1>Quantum Track</h1>
           <p>
@@ -53,7 +65,10 @@
         </div>
       </article>
       <article class="card">
-        <img src="~/assets/svg/ml.svg" alt="Machine Learning Track Photo" />
+        <img
+          src="~/assets/images/tracks/ml.svg"
+          alt="Machine Learning Track Photo"
+        />
         <div class="text">
           <h1>Machine Learning Track</h1>
           <p>

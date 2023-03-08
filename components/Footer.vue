@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <img class="footer-image" src="~/assets/images/footer.png" />
+    <img class="footer-image" src="~/assets/images/background/footer.png" />
     <div class="footer-text">
       <div class="links">
         <span class="links-1">
@@ -34,16 +34,15 @@ export default {
 footer {
   position: relative;
   box-sizing: border-box;
+  margin-top: -40vw;
   width: 100vw;
-  height: 60vw;
   color: white;
   font-size: 1.125rem;
   line-height: 1.4;
 }
 
 .footer-image {
-  position: absolute;
-  bottom: 0;
+  display: block;
   width: 100vw;
   background-position: center;
   background-repeat: no-repeat;

@@ -48,18 +48,24 @@
         <li class="page">
           <a href="#faq">FAQ</a>
         </li>
-        <!-- <li class="page">
-          <a href="#sponsor">Sponsors</a>
-        </li> -->
+        <li class="page">
+          <a href="#sponsors">Sponsors</a>
+        </li>
         <template v-if="bigScreen">
           <li class="image">
-            <img class="marshie red" src="~/assets/images/rider.png" />
+            <img class="marshie red" src="~/assets/images/marshies/rider.png" />
           </li>
           <li class="image">
-            <img class="marshie blue" src="~/assets/images/hiker.png" />
+            <img
+              class="marshie blue"
+              src="~/assets/images/marshies/hiker.png"
+            />
           </li>
           <li class="image">
-            <img class="marshie green" src="~/assets/images/watcher.png" />
+            <img
+              class="marshie green"
+              src="~/assets/images/marshies/watcher.png"
+            />
           </li>
           <a
             id="mlh-trust-badge"
@@ -150,7 +156,6 @@ header {
 nav {
   position: relative;
   margin: 0vw;
-  font-size: 1.25vw;
   font-family: Aleo;
 }
 
@@ -214,7 +219,7 @@ nav {
 .nav-pages li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5vw;
 }
 
 .divider-large-screen {
@@ -357,6 +362,9 @@ nav {
 
   .nav-pages li {
     margin-top: 1vw;
+  }
+  .nav-pages li a {
+    font-size: 1.2rem;
   }
 
   .hamburgerContainer {

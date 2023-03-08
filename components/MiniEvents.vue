@@ -4,7 +4,10 @@
 
     <div class="mini-events-container">
       <article class="card">
-        <img src="~/assets/svg/color-war.svg" alt="Colorwar Photo" />
+        <img
+          src="~/assets/images/mini-events/color-war.svg"
+          alt="Colorwar Photo"
+        />
         <div class="text">
           <h1>Colorwar</h1>
           <p>
@@ -24,7 +27,10 @@
         </span>
       </article>
       <article class="card">
-        <img src="~/assets/svg/design-den.svg" alt="Design Den Photo" />
+        <img
+          src="~/assets/images/mini-events/design-den.svg"
+          alt="Design Den Photo"
+        />
         <div class="text">
           <h1>Design Den</h1>
           <p>

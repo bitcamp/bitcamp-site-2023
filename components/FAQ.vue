@@ -1,7 +1,7 @@
 <template>
   <div id="faq" class="section">
     <div class="FAQ_Section">
-      <h2 class="Header">FAQ</h2>
+      <h1 class="Header">FAQ</h1>
       <div class="Question_Wrapper">
         <div
           v-for="(questions, i) in [questions_left, questions_right]"
@@ -139,19 +139,10 @@ function toggleButton(question: string) {
 </script>
 
 <style scoped lang="scss">
-#faq {
-  height: 85vw;
-
-  @media (max-width: 768px) {
-    height: 350vw;
-  }
-}
-
 .Header {
   font-family: Aleo;
   font-weight: bold;
   color: white;
-  font-size: 3vw;
   padding-bottom: 2vw;
 }
 
@@ -172,6 +163,7 @@ function toggleButton(question: string) {
   background-color: #10274f80;
   backdrop-filter: blur(35px);
   margin: 8vw;
+  margin-bottom: 0;
 }
 
 .Question_Wrapper {
@@ -202,7 +194,7 @@ function toggleButton(question: string) {
 
 .Question_Button {
   &::after {
-    content: url(../assets/img/icons/plus.svg);
+    content: url(../assets/images/icons/plus.svg);
     min-width: 2rem;
     min-height: 2rem;
     max-width: 2rem;
@@ -289,10 +281,6 @@ function toggleButton(question: string) {
   .Answer_Opened {
     height: 100%;
     font-size: 3.5vw;
-  }
-
-  .FAQ_Section {
-    margin-bottom: 34vw;
   }
 }
 

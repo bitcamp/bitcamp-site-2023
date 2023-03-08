@@ -1,25 +1,26 @@
 <template>
   <a class="logo-sponsor" :href="url">
-    <img :src="`_nuxt/assets/img/sponsors/${tier}/${name}.png`" :alt="name" />
+    <img :src="`_nuxt/assets/images/sponsors/${name}.png`" :alt="name" />
   </a>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
-    name: string;
-    tier: string;
-    url: string;
-  }>();
+defineProps<{
+  name: string;
+  url?: string;
+}>();
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .logo-sponsor {
   width: auto;
   text-align: center;
+  grid-column: span 2;
 }
 
 .logo-sponsor img {
-  width: 20rem;
+  width: 100%;
+  max-width: 15rem;
   height: 10rem;
   object-fit: contain;
   transition: transform 300ms ease-in-out;
@@ -32,15 +33,13 @@
 
 @media only screen and (max-width: 500px) {
   .logo-sponsor img {
-  width: 15rem;
-  height: 7.5rem;
+    height: 7.5rem;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .logo-sponsor img {
-  width: 10rem;
-  height: 5rem;
+    height: 5rem;
   }
 }
 </style>

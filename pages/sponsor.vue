@@ -4,10 +4,7 @@
       <section class="col-lg-7">
         <section class="SupportSection">
           <a href="./" class="home-link">
-            <img
-              src="../assets/img/sponsors/Custom/go-back.svg"
-              alt="Go Back"
-            />
+            <img src="../assets/images/icons/go-back.svg" alt="Go Back" />
             <span>Home</span>
           </a>
           <h1>
@@ -563,13 +560,13 @@
             <h2>Connect</h2>
             <div>
               <img
-                src="../assets/img/sponsors/Custom/globe.svg"
+                src="../assets/images/icons/globe.svg"
                 alt="Bitcamp Homepage"
               />
               <a href="https://bit.camp">https://bit.camp</a>
             </div>
             <div>
-              <img src="../assets/img/sponsors/Custom/email.svg" alt="Email" />
+              <img src="../assets/images/icons/email.svg" alt="Email" />
               <a class="SponsorEmail" href="mailto:sponsorship@bit.camp"
                 >sponsorship@bit.camp</a
               >

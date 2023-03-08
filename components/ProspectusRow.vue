@@ -7,7 +7,7 @@
       :title="categoryName"
     >
       <img
-        src="../assets/img/sponsors/Custom/question-mark-black.svg"
+        src="../assets/images/icons/question-mark-black.svg"
         alt="Question Mark"
       />
     </a>
@@ -21,16 +21,10 @@
     :class="'Rtable-cell-' + tierNames[index]"
   >
     <p v-if="arg === 'check-b'">
-      <img
-        src="../assets/img/sponsors/Custom/check-black.svg"
-        alt="Checkmark"
-      />
+      <img src="../assets/images/icons/check-black.svg" alt="Checkmark" />
     </p>
     <p v-else-if="arg === 'check-w'">
-      <img
-        src="../assets/img/sponsors/Custom/check-white.svg"
-        alt="Checkmark"
-      />
+      <img src="../assets/images/icons/check-white.svg" alt="Checkmark" />
     </p>
     <p v-else>{{ arg }}</p>
   </div>

@@ -3,19 +3,15 @@
     class="Rtable-cell Rtable-category-cell"
     :class="'Rtable-misc-category-cell-' + type"
   >
-    <a
-      class="tooltips direction"
-      :title="perk"
-      :description="description"
-    >
+    <a class="tooltips direction" :title="perk" :description="description">
       <img
-        src="../assets/img/sponsors/Custom/question-mark-black.svg"
+        src="../assets/images/icons/question-mark-black.svg"
         alt="Question Mark"
       />
     </a>
     {{ perk }}
   </div>
-  
+
   <div class="Rtable-cell Rtable-cell-misc" :class="'Rtable-misc-cell-' + type">
     {{ price }}
   </div>

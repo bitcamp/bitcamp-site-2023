@@ -1,7 +1,7 @@
 <template>
   <div id="hero" class="section">
     <div class="hero-image-wrapper">
-      <img class="hero-image" src="~/assets/images/hero.png" />
+      <img class="hero-image" src="~/assets/images/background/hero.png" />
     </div>
     <div class="header">
       <img src="/bitcamp-brand/logos/bitcamp.png" />
@@ -66,7 +66,7 @@ defineProps<{
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 

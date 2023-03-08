@@ -17,7 +17,7 @@
       <div class="team-section">
         <img
           class="team-picture red-marshie"
-          src="../assets/images/rider.png"
+          src="../assets/images/marshies/rider.png"
           alt="Red marshie"
         />
         <h3 class="team-title red">Red Team</h3>
@@ -30,7 +30,7 @@
       <div class="team-section">
         <img
           class="team-picture"
-          src="../assets/images/hiker.png"
+          src="../assets/images/marshies/hiker.png"
           alt="Blue marshie"
         />
         <h3 class="team-title blue">Blue Team</h3>
@@ -44,7 +44,7 @@
       <div class="team-section">
         <img
           class="team-picture"
-          src="../assets/images/watcher.png"
+          src="../assets/images/marshies/watcher.png"
           alt="Green marshie"
         />
         <h3 class="team-title green">Green Team</h3>
