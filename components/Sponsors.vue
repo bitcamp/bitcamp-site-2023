@@ -169,20 +169,23 @@ const sponsors: Sponsor[] = [
   border-radius: 20px;
   padding: 4rem;
   background-color: rgba(#ffffff, 0.2);
-  counter-reset: grid;
+}
 
-  & > * {
-    /* Dealing with 2 items in last row */
-    &:last-child:nth-child(3n - 1) {
-      grid-column-end: 6;
-    }
-    &:nth-last-child(2):nth-child(3n - 2) {
-      grid-column-end: 4;
-    }
+@media only screen and (min-width: 992px) {
+  .sponsor-container {
+    & > * {
+      /* Dealing with 2 items in last row */
+      &:last-child:nth-child(3n - 1) {
+        grid-column-end: 6;
+      }
+      &:nth-last-child(2):nth-child(3n - 2) {
+        grid-column-end: 4;
+      }
 
-    /* Dealing with 1 item in last row */
-    &:last-child:nth-child(3n - 2) {
-      grid-column-end: 5;
+      /* Dealing with 1 item in last row */
+      &:last-child:nth-child(3n - 2) {
+        grid-column-end: 5;
+      }
     }
   }
 }
