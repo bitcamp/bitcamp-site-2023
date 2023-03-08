@@ -134,11 +134,11 @@ const sponsors: Sponsor[] = [
     amount: 1000,
     url: 'https://umdphysics.umd.edu/',
   },
-  // {
-  //   name: 'Visionist',
-  //   amount: 1000,
-  //   url: 'https://www.visionistinc.com/',
-  // },
+  {
+    name: 'Visionist',
+    amount: 1000,
+    url: 'https://www.visionistinc.com/',
+  },
 ].sort((a: Sponsor, b: Sponsor) => b.amount - a.amount);
 </script>
 
