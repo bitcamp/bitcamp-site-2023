@@ -1,6 +1,6 @@
 <template>
   <a class="logo-sponsor" :href="url">
-    <img :src="getImageUrl(name)" :alt="name" />
+    <img :src="`sponsor-logos/${name}.png`" :alt="name" />
   </a>
 </template>
 
@@ -9,11 +9,6 @@ defineProps<{
   name: string;
   url?: string;
 }>();
-
-// https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url
-function getImageUrl(name: string) {
-  return new URL(`../assets/images/sponsors/${name}.png`, import.meta.url).href;
-}
 </script>
 
 <style scoped lang="scss">
