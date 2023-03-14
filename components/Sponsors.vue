@@ -139,6 +139,11 @@ const sponsors: Sponsor[] = [
     amount: 1000,
     url: 'https://www.visionistinc.com/',
   },
+  {
+    name: 'StandOut Stickers',
+    amount: 100,
+    url: 'https://hackp.ac/mlh-standoutstickers-hackathons',
+  },
 ].sort((a: Sponsor, b: Sponsor) => b.amount - a.amount);
 </script>
 
@@ -173,11 +178,13 @@ const sponsors: Sponsor[] = [
 
 @media only screen and (min-width: 992px) {
   .sponsor-container {
-    & > * {
+    &>* {
+
       /* Dealing with 2 items in last row */
       &:last-child:nth-child(3n - 1) {
         grid-column-end: 6;
       }
+
       &:nth-last-child(2):nth-child(3n - 2) {
         grid-column-end: 4;
       }
@@ -195,7 +202,7 @@ const sponsors: Sponsor[] = [
     grid-template-columns: repeat(4, 1fr);
 
     /* Dealing with 1 item in last row */
-    & > *:last-child:nth-child(2n - 1) {
+    &>*:last-child:nth-child(2n - 1) {
       grid-column-end: 4;
     }
   }
