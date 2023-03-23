@@ -114,8 +114,13 @@ const questions = ref<FAQ[]>([
   },
   {
     question: "What if I don't go to the University of Maryland?",
-    answer:
-      'We\'d love to have you attend! You can fill out the travel interest form located <a class="link" href="https://bit.camp/travel-interest">here!</a>',
+    answer: `We\'d love to have you attend! We are providing bus transportation along the following routes:
+      <ul>
+        <li>George Mason University, University of Virginia</li>
+        <li>Johns Hopkins University, Morgan State University</li>
+        <li>UMBC</li>
+      </ul>
+      If you go to these one of these schools, our travel team will contact you with bus registration details within a few days. Contact <a class="link" href="mailto:travel@bit.camp">travel@bit.camp</a> with any questions!`,
   },
   {
     question: 'Do I need to wear a mask?',
@@ -242,7 +247,6 @@ function toggleButton(question: string) {
   font-size: 1.4vw;
   justify-content: top;
   max-height: 0px;
-  max-width: 90%;
   overflow: hidden;
   transition: max-height 0.6s ease-in-out;
 }
@@ -253,7 +257,6 @@ function toggleButton(question: string) {
   text-align: left;
   font-size: 1.4vw;
   justify-content: top;
-  max-width: 90%;
   overflow-y: auto;
   transition: max-height 0.6s ease-in-out;
   margin-bottom: 2rem;
@@ -293,5 +296,11 @@ function toggleButton(question: string) {
 <style lang="scss">
 a.link {
   color: var(--color-bitcamp);
+}
+
+ul {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  padding-inline-start: 1rem;
 }
 </style>
