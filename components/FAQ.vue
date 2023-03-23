@@ -233,6 +233,7 @@ function toggleButton(question: string) {
   height: 6vw;
   width: 100%;
   padding: 3rem 12px 2.7rem;
+  cursor: pointer;
 }
 
 .Answer {
