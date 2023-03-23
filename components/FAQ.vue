@@ -79,7 +79,7 @@ const questions = ref<FAQ[]>([
       "We'd love to get you on our volunteering or mentoring teams! If you'd like to help, please fill out our mentor form or our volunteer form. Also, be sure to follow us on Facebook and Twitter for updates!",
   },
   {
-    question: 'Teams',
+    question: 'How do I join a team?',
     answer:
       "Projects are submitted by teams to DevPost. You don't need to finalize your team until project submissions are due during the event. You may work individually or in a team of up to four campers. Don't have a team in mind? No problem! Bitcamp will kick off with an optional team formation event.",
   },
