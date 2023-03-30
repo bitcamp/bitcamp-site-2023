@@ -134,8 +134,10 @@
       <h3>Contact Us</h3>
       <p>
         If you have any questions or suggestions about our Privacy Policy, do
-        not hesitate to contact us.
+        not hesitate to contact us at <a href="mailto:hello@bit.camp">hello@bit.camp</a>.
       </p>
+      
+      
     </div>
     <Footer />
   </div>
@@ -298,6 +300,7 @@ img {
 }
 
 #privacy-policy {
+  position: relative;
   box-sizing: border-box;
   align-items: center;
 
