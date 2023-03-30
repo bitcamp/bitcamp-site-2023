@@ -148,7 +148,7 @@ useHead({
     {
       name: 'description',
       content:
-        "Bitcamp is a place for exploration. You will have 36 hours to delve into your curiosities, learn something new, and make something awesome. With world-class mentors and hundreds of fellow campers, you're in for an amazing time. If you're ready for an adventure, see you by the fire!",
+        "Bitcamp's Privacy Policy page.",
     },
     {
       property: 'og:title',
@@ -165,7 +165,7 @@ useHead({
     {
       property: 'og:description',
       content:
-        "Bitcamp is a place for exploration. You will have 36 hours to delve into your curiosities, learn something new, and make something awesome. With world-class mentors and hundreds of fellow campers, you're in for an amazing time. If you're ready for an adventure, see you by the fire!",
+        "Bitcamp's Privacy Policy page.",
     },
     {
       property: 'og:type',
@@ -186,7 +186,7 @@ useHead({
     {
       property: 'twitter:description',
       content:
-        "Bitcamp is a place for exploration. You will have 36 hours to delve into your curiosities, learn something new, and make something awesome. With world-class mentors and hundreds of fellow campers, you're in for an amazing time. If you're ready for an adventure, see you by the fire!",
+        "Bitcamp's Privacy Policy page.",
     },
     {
       name: 'msapplication-TileColor',
