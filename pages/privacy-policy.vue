@@ -252,13 +252,13 @@ export default {
 }
 
 p {
-  margin: 15px 15px 0 0;
+  margin-top: 15px;
 }
 
 ul {
   list-style-position: inside;
   padding-left: 20px;
-  margin: 15px 15px 0 0;
+  margin: 15px 0 15px 0;
 }
 
 a {
@@ -304,7 +304,7 @@ img {
   box-sizing: border-box;
   align-items: center;
 
-  padding: 4rem 4rem 8rem 8rem;
+  padding: 4rem 8rem 4rem 8rem;
 
   margin-left: auto;
   margin-right: auto;
