@@ -47,7 +47,7 @@ const sponsors: Sponsor[] = [
   {
     name: 'Bloomberg Industry Group',
     amount: 4000,
-    url: 'https://www.bloombergindustry.com/',
+    url: 'https://www.bloombergindustry.com/careers/',
   },
   {
     name: 'BSOS',
@@ -178,8 +178,7 @@ const sponsors: Sponsor[] = [
 
 @media only screen and (min-width: 992px) {
   .sponsor-container {
-    &>* {
-
+    & > * {
       /* Dealing with 2 items in last row */
       &:last-child:nth-child(3n - 1) {
         grid-column-end: 6;
@@ -202,7 +201,7 @@ const sponsors: Sponsor[] = [
     grid-template-columns: repeat(4, 1fr);
 
     /* Dealing with 1 item in last row */
-    &>*:last-child:nth-child(2n - 1) {
+    & > *:last-child:nth-child(2n - 1) {
       grid-column-end: 4;
     }
   }
