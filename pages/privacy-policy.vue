@@ -315,7 +315,7 @@ img {
   border-radius: 15px;
   backdrop-filter: blur(35px);
   background-color: #18326080;
-  z-index: 999;
+  z-index: 10;
 
   @media (min-width: 576px) and (max-width: 767.8px) {
     width: calc(50% - 30px);
