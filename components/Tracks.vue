@@ -62,6 +62,8 @@
             participant of the Quantum track, there will be new, challenging
             prompts for you to tackle!
           </p>
+          <br />
+          <strong>Quantum Track sponsored by IonQ</strong>
         </div>
       </article>
       <article class="card">
