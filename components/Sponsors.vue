@@ -90,6 +90,16 @@ const sponsors: Sponsor[] = [
     url: 'https://www.geico.com',
   },
   {
+    name: 'IonQ',
+    amount: 6000,
+    url: 'https://ionq.com/',
+  },
+  {
+    name: 'iSchool',
+    amount: 1000,
+    url: 'https://ischool.umd.edu/',
+  },
+  {
     name: 'JHU APL',
     amount: 4000,
     url: 'https://www.jhuapl.edu/',
@@ -103,6 +113,11 @@ const sponsors: Sponsor[] = [
     name: 'M&T Bank',
     amount: 4000,
     url: 'https://www3.mtb.com/careers/technology-careers',
+  },
+  {
+    name: 'SEE',
+    amount: 8045.55,
+    url: 'https://www.see.umd.edu/',
   },
   {
     name: 'Smith School of Business',
