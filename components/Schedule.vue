@@ -62,8 +62,8 @@
                       >
                         <div
                           v-if="
-                            formattedEvents[selectedDay][timeWindow].find(
-                              (event) =>
+                            formattedEvents[selectedDay as any][timeWindow].find(
+                              (event: any) =>
                                 event.column === scheduleColumn &&
                                 event.display &&
                                 event.displayMode
@@ -71,15 +71,26 @@
                           "
                           class="schedule-content-item"
                           :class="
-                            formattedEvents[selectedDay][timeWindow].find(
-                              (event) => event.column === scheduleColumn
+                            formattedEvents[selectedDay as any][timeWindow].find(
+                              (event: any) => event.column === scheduleColumn
                             ).class
+                          "
+                          data-toggle="modal"
+                          data-target="#scheduleEventModal"
+                          @click="
+                            openScheduleModal(
+                              selectedDay as Date,
+                              timeWindow,
+                              scheduleColumn
+                            )
                           "
                         >
                           <div class="schedule-content-item-title">
                             {{
-                              formattedEvents[selectedDay][timeWindow].find(
-                                (event) => event.column === scheduleColumn
+                              formattedEvents[selectedDay as any][
+                                timeWindow
+                              ].find(
+                                (event: any) => event.column === scheduleColumn
                               ).event_name
                             }}
                           </div>
@@ -98,265 +109,267 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'SchedulePage',
-  data() {
-    return {
-      rawEvents: [],
-      formattedEvents: {},
-      selectedDay: null,
-      days: [],
-      timeWindows: [],
-      timeWindowColumns: {},
-      scheduleColumns: 1,
-      dataLoaded: false,
-      selectedEvent: {},
-      startDate: new Date('2023-04-07T15:00:00-04:00'),
-      endDate: new Date('2023-04-09T16:00:00-04:00'),
-    };
-  },
-  computed: {
-    timezoneIsUSEastern() {
-      const offset = new Date().getTimezoneOffset();
-      return offset === 240; // 240 is the offset for us eastern time zone
-    },
-    displayTimeWindows() {
-      const timeWindowColumns = this.timeWindowColumns[this.selectedDay];
-      const keys = Object.keys(timeWindowColumns);
-      const topExtraRows = 1;
-      const bottomExtraRows = 1;
-      let startCutoff = 0;
-      let endCutoff = -1;
-      // 1. trim at the top
-      for (let i = 0; i < keys.length; i += 1) {
-        if (timeWindowColumns[keys[i]].length > 0) {
-          startCutoff = Math.max(i - topExtraRows, 0);
-          break;
-        }
-      }
+<script setup lang="ts">
+import { computed } from 'vue';
 
-      // 2. trim at the bottom
-      const newTimes = [];
-      for (let i = keys.length - 1; i >= 0; i -= 1) {
-        if (timeWindowColumns[keys[i]].length > 0) {
-          /* Check for events that overflow the end of the time windows */
-          endCutoff = i + bottomExtraRows + 1;
-          if (endCutoff >= this.timeWindows.length) {
-            // Add additional time windows to the end to support long events (up to 1 hour over)
-            const midnight = new Date();
-            midnight.setHours(0, 0, 0, 0);
-            const currentTime = new Date(midnight);
-            // Go through every possible 30 minute increment in a day
-            while (endCutoff >= keys.length + newTimes.length) {
-              newTimes.push(this.formatAMPM(currentTime));
-              currentTime.setMinutes(currentTime.getMinutes() + 30);
-            }
-          }
-          break;
-        }
-      }
+const rawEvents = ref<any>([]);
+const formattedEvents = ref<any>({});
+const selectedDay = ref<Date>();
+const days = ref<Date[]>([]);
+const timeWindows = ref<any[]>([]);
+const timeWindowColumns = ref<any>({});
+const scheduleColumns = ref(1);
+const dataLoaded = ref(false);
+const selectedEvent = ref<any>({});
+const startDate = ref(new Date('2023-04-07T15:00:00-04:00'));
+const endDate = ref(new Date('2023-04-09T16:00:00-04:00'));
 
-      //   return this.timeWindows.concat(newTimes).slice(startCutoff, endCutoff);
-      endCutoff -= 1;
-      if (this.selectedDay == this.days[this.days.length - 1]) {
-        endCutoff = 32; // 4PM
-      }
-      return this.timeWindows.concat(newTimes).slice(startCutoff, endCutoff);
-    },
-    timezoneDisplayName() {
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      if (tz) {
-        // apply some light formatting to the time zone
-        return tz.replace('_', ' ');
-      }
-      // some browsers do not support this (e.g. IE11)
-      return '';
-    },
-  },
-  async mounted() {
-    this.populateDays();
-    this.prepareTimeWindows();
-    await this.fetchRawEvents();
-    this.processRawEvents();
-    this.dataLoaded = true;
-  },
-  methods: {
-    selectTitleItem(day) {
-      this.selectedDay = day;
-    },
-    getDayOfTheWeek(date) {
-      const weekday = new Array(7);
-      weekday[0] = 'Sunday';
-      weekday[1] = 'Monday';
-      weekday[2] = 'Tuesday';
-      weekday[3] = 'Wednesday';
-      weekday[4] = 'Thursday';
-      weekday[5] = 'Friday';
-      weekday[6] = 'Saturday';
-      return weekday[date.getDay()];
-    },
-    formatAMPM(date) {
-      // Convert to AM/PM local time
-      return date.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      });
-    },
-    populateDays() {
-      const currentDate = new Date(this.startDate);
-
-      // This code might not work at the end of the month
-      while (currentDate.getDate() <= this.endDate.getDate()) {
-        this.days.push(new Date(currentDate));
-        currentDate.setDate(currentDate.getDate() + 1);
-      }
-
-      // Make schedule start on the current day
-      const nowString = new Date().toDateString();
-      const today = this.days.find((day) => day.toDateString() === nowString);
-      this.selectedDay = today || this.days[0];
-    },
-    prepareTimeWindows() {
-      const midnight = new Date();
-      midnight.setHours(0, 0, 0, 0);
-      const currentTime = new Date(midnight);
-
-      this.days.forEach((day) => {
-        this.timeWindowColumns[day] = {};
-      });
-
-      // Go through every possible 30 minute increment in a day
-      do {
-        this.timeWindows.push(this.formatAMPM(currentTime));
-        this.days.forEach((day) => {
-          this.timeWindowColumns[day][this.formatAMPM(currentTime)] = [];
-        });
-        currentTime.setMinutes(currentTime.getMinutes() + 30);
-      } while (this.formatAMPM(currentTime) !== this.formatAMPM(midnight));
-    },
-    getDurationOfEvent(start, end) {
-      const diff = end.getTime() - start.getTime();
-      return diff / 60000;
-    },
-    processRawEvents() {
-      for (let i = 0; i < this.rawEvents.length; i += 1) {
-        // deep clone object
-        this.rawEvents[i].class = this.rawEvents[i].category;
-        const start = new Date(this.rawEvents[i].start_time);
-        const end = new Date(this.rawEvents[i].end_time);
-        this.rawEvents[i].class += ` length-${this.getDurationOfEvent(
-          start,
-          end
-        )}-min`;
-
-        // handle events starting/ending at xx:15 or xx:45
-        if (start.getMinutes() === 15 || start.getMinutes() === 45) {
-          this.rawEvents[i].class += ' offset-15-min';
-        }
-      }
-      this.days.forEach((day) => {
-        this.formattedEvents[day] = {};
-        this.timeWindows.forEach((timeWindow) => {
-          this.formattedEvents[day][timeWindow] = this.getEventsForTimeWindow(
-            timeWindow,
-            day
-          );
-        });
-      });
-
-      // set number of columns to display in schedule
-      let maxColumns = 1;
-      this.days.forEach((day) => {
-        maxColumns = Math.max(
-          maxColumns,
-          ...[].concat(...Object.values(this.timeWindowColumns[day]))
-        );
-      });
-      this.scheduleColumns = maxColumns;
-    },
-    getEventsForTimeWindow(timeWindow, day) {
-      const eventsForWindow = this.rawEvents.filter((rawEvent) => {
-        const rawEventStart = new Date(rawEvent.start_time);
-        const rawEventStartMinus15 = new Date(rawEventStart.getTime());
-        rawEventStartMinus15.setMinutes(rawEventStartMinus15.getMinutes() - 15);
-        return (
-          (this.formatAMPM(rawEventStart) === timeWindow ||
-            this.formatAMPM(rawEventStartMinus15) === timeWindow) &&
-          rawEventStart.getDate() === day.getDate()
-        );
-      });
-
-      eventsForWindow.forEach((event) => {
-        event.display = true;
-        event.displayMode = true;
-
+const displayTimeWindows = computed(() => {
+  const timeWindowCols = timeWindowColumns.value[selectedDay.value as any];
+  const keys = Object.keys(timeWindowCols);
+  const topExtraRows = 1;
+  const bottomExtraRows = 1;
+  let startCutoff = 0;
+  let endCutoff = -1;
+  // 1. trim at the top
+  for (let i = 0; i < keys.length; i += 1) {
+    if (timeWindowCols[keys[i]].length > 0) {
+      startCutoff = Math.max(i - topExtraRows, 0);
+      break;
+    }
+  }
+  // 2. trim at the bottom
+  const newTimes = [];
+  for (let i = keys.length - 1; i >= 0; i -= 1) {
+    if (timeWindowCols[keys[i]].length > 0) {
+      /* Check for events that overflow the end of the time windows */
+      endCutoff = i + bottomExtraRows + 1;
+      if (endCutoff >= timeWindows.value.length) {
+        // Add additional time windows to the end to support long events (up to 1 hour over)
         const midnight = new Date();
         midnight.setHours(0, 0, 0, 0);
-
-        const eventStart = new Date(event.start_time);
-        const eventEnd = new Date(event.end_time);
-        let column = 1;
-
-        // handle events starting/ending at xx:15 or xx:45
-        if (eventStart.getMinutes() === 15 || eventStart.getMinutes() === 45) {
-          eventStart.setMinutes(eventStart.getMinutes() - 15);
-        }
-        if (eventEnd.getMinutes() === 15 || eventEnd.getMinutes() === 45) {
-          eventEnd.setMinutes(eventEnd.getMinutes() + 15);
-        }
-
-        // find the first column that the event fits into the schedule
-        while (column < 20) {
-          const currentTime = new Date(eventStart);
-          let validColumn = true;
-          do {
-            if (
-              this.timeWindowColumns[day][
-                this.formatAMPM(currentTime)
-              ].includes(column)
-            ) {
-              validColumn = false;
-            }
-            currentTime.setMinutes(currentTime.getMinutes() + 30);
-          } while (
-            this.formatAMPM(currentTime) !== this.formatAMPM(eventEnd) &&
-            this.formatAMPM(currentTime) !== this.formatAMPM(midnight) &&
-            validColumn
-          );
-          if (validColumn) {
-            break;
-          }
-          column++;
-        }
-        event.column = column;
-
-        // update occupied columns
-        const currentTime = new Date(eventStart);
-        do {
-          this.timeWindowColumns[day][this.formatAMPM(currentTime)].push(
-            column
-          );
+        const currentTime = new Date(midnight);
+        // Go through every possible 30 minute increment in a day
+        while (endCutoff >= keys.length + newTimes.length) {
+          newTimes.push(formatAMPM(currentTime));
           currentTime.setMinutes(currentTime.getMinutes() + 30);
-        } while (
-          this.formatAMPM(currentTime) !== this.formatAMPM(eventEnd) &&
-          this.formatAMPM(currentTime) !== this.formatAMPM(midnight)
-        );
-      });
-      return eventsForWindow;
-    },
-    async fetchRawEvents() {
-      try {
-        // fetch events from DynamoDB
-        const eventsRes = await fetch('https://api.bit.camp/schedule');
-        const events = await eventsRes.json();
-        this.rawEvents = events;
-      } catch (error) {
-        this.rawEvents = [];
+        }
       }
-    },
-  },
+      break;
+    }
+  }
+  return timeWindows.value.concat(newTimes).slice(startCutoff, endCutoff);
+});
+
+onMounted(async () => {
+  populateDays();
+  prepareTimeWindows();
+  await fetchRawEvents();
+  processRawEvents();
+  dataLoaded.value = true;
+});
+
+function populateDays() {
+  const currentDate = new Date(startDate.value);
+
+  // This code might not work at the end of the month
+  while (currentDate.getDate() <= endDate.value.getDate()) {
+    days.value.push(new Date(currentDate));
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  // Make schedule start on the current day
+  const nowString = new Date().toDateString();
+  const today = days.value.find((day) => day.toDateString() === nowString);
+  selectedDay.value = today || days.value[0];
+}
+
+function prepareTimeWindows() {
+  const midnight = new Date();
+  midnight.setHours(0, 0, 0, 0);
+  const currentTime = new Date(midnight);
+
+  days.value.forEach((day) => {
+    timeWindowColumns.value[day as any] = {};
+  });
+
+  // Go through every possible 30 minute increment in a day
+  do {
+    timeWindows.value.push(formatAMPM(currentTime));
+    days.value.forEach((day) => {
+      timeWindowColumns.value[day as any][formatAMPM(currentTime)] = [];
+    });
+    currentTime.setMinutes(currentTime.getMinutes() + 30);
+  } while (formatAMPM(currentTime) !== formatAMPM(midnight));
+}
+
+async function fetchRawEvents() {
+  try {
+    // fetch events from DynamoDB
+    const eventsRes = await fetch('https://api.bit.camp/schedule');
+    const events = await eventsRes.json();
+    rawEvents.value = events;
+    console.log(rawEvents.value);
+  } catch (error) {
+    rawEvents.value = [];
+  }
+}
+
+function processRawEvents() {
+  for (let i = 0; i < rawEvents.value.length; i += 1) {
+    // deep clone object
+    rawEvents.value[i].class = rawEvents.value[i].category;
+    const start = new Date(rawEvents.value[i].start_time);
+    const end = new Date(rawEvents.value[i].end_time);
+    rawEvents.value[i].class += ` length-${getDurationOfEvent(start, end)}-min`;
+
+    // handle events starting/ending at xx:15 or xx:45
+    if (start.getMinutes() === 15 || start.getMinutes() === 45) {
+      rawEvents.value[i].class += ' offset-15-min';
+    }
+  }
+  days.value.forEach((day) => {
+    formattedEvents.value[day as any] = {};
+    timeWindows.value.forEach((timeWindow) => {
+      formattedEvents.value[day as any][timeWindow] = getEventsForTimeWindow(
+        timeWindow,
+        day
+      );
+    });
+  });
+
+  // set number of columns to display in schedule
+  let maxColumns = 1;
+  days.value.forEach((day) => {
+    maxColumns = Math.max(
+      maxColumns,
+      ...[].concat(
+        ...(Object.values(timeWindowColumns.value[day as any]) as any[])
+      )
+    );
+  });
+  scheduleColumns.value = maxColumns;
+
+  console.log(formattedEvents.value);
+}
+
+function getEventsForTimeWindow(timeWindow: any, day: Date) {
+  const eventsForWindow = rawEvents.value.filter((rawEvent: any) => {
+    const rawEventStart = new Date(rawEvent.start_time);
+    const rawEventStartMinus15 = new Date(rawEventStart.getTime());
+    rawEventStartMinus15.setMinutes(rawEventStartMinus15.getMinutes() - 15);
+    return (
+      (formatAMPM(rawEventStart) === timeWindow ||
+        formatAMPM(rawEventStartMinus15) === timeWindow) &&
+      rawEventStart.getDate() === day.getDate()
+    );
+  });
+
+  eventsForWindow.forEach((event: any) => {
+    event.display = true;
+    event.displayMode = true;
+
+    const midnight = new Date();
+    midnight.setHours(0, 0, 0, 0);
+
+    const eventStart = new Date(event.start_time);
+    const eventEnd = new Date(event.end_time);
+    let column = 1;
+
+    // handle events starting/ending at xx:15 or xx:45
+    if (eventStart.getMinutes() === 15 || eventStart.getMinutes() === 45) {
+      eventStart.setMinutes(eventStart.getMinutes() - 15);
+    }
+    if (eventEnd.getMinutes() === 15 || eventEnd.getMinutes() === 45) {
+      eventEnd.setMinutes(eventEnd.getMinutes() + 15);
+    }
+
+    // find the first column that the event fits into the schedule
+    while (column < 20) {
+      const currentTime = new Date(eventStart);
+      let validColumn = true;
+      do {
+        if (
+          timeWindowColumns.value[day as any][formatAMPM(currentTime)].includes(
+            column
+          )
+        ) {
+          validColumn = false;
+        }
+        currentTime.setMinutes(currentTime.getMinutes() + 30);
+      } while (
+        formatAMPM(currentTime) !== formatAMPM(eventEnd) &&
+        formatAMPM(currentTime) !== formatAMPM(midnight) &&
+        validColumn
+      );
+      if (validColumn) {
+        break;
+      }
+      column++;
+    }
+    event.column = column;
+
+    // update occupied columns
+    const currentTime = new Date(eventStart);
+    do {
+      timeWindowColumns.value[day as any][formatAMPM(currentTime)].push(column);
+      currentTime.setMinutes(currentTime.getMinutes() + 30);
+    } while (
+      formatAMPM(currentTime) !== formatAMPM(eventEnd) &&
+      formatAMPM(currentTime) !== formatAMPM(midnight)
+    );
+  });
+  return eventsForWindow;
+}
+
+function formatAMPM(date: Date) {
+  // Convert to AM/PM local time
+  return date.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+}
+
+function getDayOfTheWeek(date: Date) {
+  const weekday = new Array(7);
+  weekday[0] = 'Sunday';
+  weekday[1] = 'Monday';
+  weekday[2] = 'Tuesday';
+  weekday[3] = 'Wednesday';
+  weekday[4] = 'Thursday';
+  weekday[5] = 'Friday';
+  weekday[6] = 'Saturday';
+  return weekday[date.getDay()];
+}
+
+function getDurationOfEvent(start: Date, end: Date) {
+  const diff = end.getTime() - start.getTime();
+  return diff / 60000;
+}
+
+function selectTitleItem(day: Date) {
+  selectedDay.value = day;
+}
+
+function openScheduleModal(
+  selectedDay: Date,
+  timeWindow: any,
+  scheduleColumn: any
+) {
+  selectedEvent.value = formattedEvents.value[selectedDay as any][
+    timeWindow
+  ].find((event: any) => event.column === scheduleColumn);
+  selectedEvent.value.selectedDay = selectedDay;
+  selectedEvent.value.timeWindow = timeWindow;
+  selectedEvent.value.scheduleColumn = scheduleColumn;
+  // this.$bvModal.show('scheduleEventModal');
+}
+</script>
+
+<script lang="ts">
+export default {
+  name: 'SchedulePage',
 };
 </script>
 
@@ -371,7 +384,7 @@ $COLOR_BORDER: rgba(#ffffff, 30%);
 $COLOR_LIGHT_TEXT: white;
 $COLOR_FOCUS: rgba(38, 143, 255, 0.35);
 $COLOR_SHADOW: rgba(117, 84, 84, 0.4);
-$BORDER_RADIUS: 15px;
+$BORDER_RADIUS: 1rem;
 
 $COLOR_MAIN_EVENT: #ba6541;
 $COLOR_MAIN_EVENT_BORDER: darken($COLOR_MAIN_EVENT, 30%);
