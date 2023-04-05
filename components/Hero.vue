@@ -8,12 +8,14 @@
       <div class="header-content">
         <h1>Find Your Frontier!</h1>
         <h3>April 7-9, 2023 @ XFINITY Center</h3>
-        <h2>Applications are now open!</h2>
+        <!-- <h2>Applications are now open!</h2> -->
+        <h2>Registrations are now closed. Click below to join our waitlist!</h2>
         <div class="header-button-container">
-          <Button text="Hacker" link="https://register.bit.camp" size="medium" />
+          <Button text="Click Here!" link="https://forms.gle/C31xLjHLnLkBNRSXA" size="large" />
+          <!-- <Button text="Hacker" link="https://register.bit.camp" size="medium" />
           <Button text="Volunteer" link="https://forms.gle/kyQwDzX7UKDEwa7b9" size="medium" color="#10274f" />
           <Button text="Mentor" link="https://forms.gle/kP2nrzPzwd6PD8nLA" size="medium" color="#324A79" />
-          <Button text="Workshop" link="https://forms.gle/wXKe5ZyiJ1f14tDs6" size="medium" color="#8F9EBC" />
+          <Button text="Workshop" link="https://forms.gle/wXKe5ZyiJ1f14tDs6" size="medium" color="#8F9EBC" /> -->
         </div>
       </div>
     </div>
