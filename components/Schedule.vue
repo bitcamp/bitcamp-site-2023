@@ -387,6 +387,7 @@ $COLOR_FOOD_BORDER: darken($COLOR_FOOD, 30%);
 .section-title {
   text-align: center;
   font-weight: bold;
+  font-size: 2em;
 }
 .card {
   border: 0;
