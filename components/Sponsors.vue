@@ -32,7 +32,7 @@ const sponsors: Sponsor[] = [
   {
     name: '1517',
     amount: 1000,
-    url: 'https://www.1517.org/',
+    url: 'https://www.1517fund.com/',
   },
   {
     name: 'ACES',
