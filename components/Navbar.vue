@@ -42,9 +42,9 @@
         <li class="page">
           <a href="#campfire-games">Campfire Games</a>
         </li>
-        <!-- <li class="page">
+        <li class="page">
           <a href="#schedule">Schedule</a>
-        </li> -->
+        </li>
         <li class="page">
           <a href="#faq">FAQ</a>
         </li>
@@ -357,7 +357,6 @@ nav {
     flex-direction: column;
     align-self: flex-start;
     align-items: center;
-    padding-bottom: 5%;
   }
 
   .nav-pages li {
