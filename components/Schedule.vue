@@ -397,6 +397,9 @@ export default {
 @import 'bootstrap/dist/css/bootstrap.css';
 @import '../assets/css/schedule.scss';
 
+.section {
+  width: 100%;
+}
 .section-title {
   text-align: center;
   font-weight: bold;
