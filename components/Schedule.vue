@@ -48,9 +48,14 @@
                       </span>
                     </div>
                   </div>
-                  <div class="schedule-content">
+                  <div
+                    class="schedule-content"
+                    :style="{
+                      gridTemplateColumns: `repeat(${scheduleColumns[selectedDay as any]}, minmax(0, 1fr))`,
+                    }"
+                  >
                     <div
-                      v-for="scheduleColumn in scheduleColumns"
+                      v-for="scheduleColumn in scheduleColumns[selectedDay as any]"
                       :key="scheduleColumn"
                       Schedule
                       class="schedule-column"
@@ -124,7 +129,7 @@ const selectedDay = ref<Date>();
 const days = ref<Date[]>([]);
 const timeWindows = ref<any[]>([]);
 const timeWindowColumns = ref<any>({});
-const scheduleColumns = ref(1);
+const scheduleColumns = ref<any>({});
 const dataLoaded = ref(false);
 const selectedEvent = ref<Event>();
 const startDate = ref(new Date('2023-04-07T15:00:00-04:00'));
@@ -251,16 +256,14 @@ function processRawEvents() {
   });
 
   // set number of columns to display in schedule
-  let maxColumns = 1;
   days.value.forEach((day) => {
-    maxColumns = Math.max(
-      maxColumns,
+    console.log(scheduleColumns.value);
+    scheduleColumns.value[day as any] = Math.max(
       ...[].concat(
         ...(Object.values(timeWindowColumns.value[day as any]) as any[])
       )
     );
   });
-  scheduleColumns.value = maxColumns;
 }
 
 function getEventsForTimeWindow(timeWindow: any, day: Date) {
@@ -480,10 +483,8 @@ export default {
   width: 15%;
 }
 .schedule-content {
-  display: flex;
+  display: grid;
   width: 100%;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 .timewindow {
   font-size: 1.25rem;
@@ -493,7 +494,6 @@ export default {
   color: $COLOR_LIGHT_TEXT;
 }
 .schedule-column {
-  flex: 1;
 }
 .schedule-content-item {
   height: 4.5vh;
@@ -556,6 +556,10 @@ export default {
 }
 .offset-15-min {
   margin-top: 3.5vh !important;
+}
+.length-0-min {
+  margin-top: -3.5vh !important;
+  height: 7vh !important;
 }
 .length-30-min {
   height: 7vh !important;
