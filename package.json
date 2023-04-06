@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "dayjs": "^1.11.7",
     "jquery": "^3.6.3",
+    "vue-final-modal": "^4.2.0",
     "vue-popperjs": "^2.3.0"
   }
 }

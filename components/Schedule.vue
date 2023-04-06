@@ -78,7 +78,7 @@
                           data-toggle="modal"
                           data-target="#scheduleEventModal"
                           @click="
-                            openScheduleModal(
+                            openEventModal(
                               selectedDay as Date,
                               timeWindow,
                               scheduleColumn
@@ -104,15 +104,21 @@
           </div>
         </div>
       </div>
-      <!-- <EventModal :selected-event="selectedEvent" /> -->
     </div>
   </div>
+  <ModalsContainer />
+  <EventModal
+    v-model="showEventModal"
+    :event="selectedEvent"
+    @close="() => closeEventModal()"
+  />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ModalsContainer } from 'vue-final-modal';
+import type { Event } from '../types/event';
 
-const rawEvents = ref<any>([]);
+const rawEvents = ref<Event[]>([]);
 const formattedEvents = ref<any>({});
 const selectedDay = ref<Date>();
 const days = ref<Date[]>([]);
@@ -120,9 +126,10 @@ const timeWindows = ref<any[]>([]);
 const timeWindowColumns = ref<any>({});
 const scheduleColumns = ref(1);
 const dataLoaded = ref(false);
-const selectedEvent = ref<any>({});
+const selectedEvent = ref<Event>();
 const startDate = ref(new Date('2023-04-07T15:00:00-04:00'));
 const endDate = ref(new Date('2023-04-09T16:00:00-04:00'));
+const showEventModal = ref(false);
 
 const displayTimeWindows = computed(() => {
   const timeWindowCols = timeWindowColumns.value[selectedDay.value as any];
@@ -209,7 +216,6 @@ async function fetchRawEvents() {
     const eventsRes = await fetch('https://api.bit.camp/schedule');
     const events = await eventsRes.json();
     rawEvents.value = events;
-    console.log(rawEvents.value);
   } catch (error) {
     rawEvents.value = [];
   }
@@ -249,8 +255,6 @@ function processRawEvents() {
     );
   });
   scheduleColumns.value = maxColumns;
-
-  console.log(formattedEvents.value);
 }
 
 function getEventsForTimeWindow(timeWindow: any, day: Date) {
@@ -352,7 +356,7 @@ function selectTitleItem(day: Date) {
   selectedDay.value = day;
 }
 
-function openScheduleModal(
+function openEventModal(
   selectedDay: Date,
   timeWindow: any,
   scheduleColumn: any
@@ -360,10 +364,17 @@ function openScheduleModal(
   selectedEvent.value = formattedEvents.value[selectedDay as any][
     timeWindow
   ].find((event: any) => event.column === scheduleColumn);
-  selectedEvent.value.selectedDay = selectedDay;
-  selectedEvent.value.timeWindow = timeWindow;
-  selectedEvent.value.scheduleColumn = scheduleColumn;
-  // this.$bvModal.show('scheduleEventModal');
+  if (selectedEvent.value) {
+    selectedEvent.value.selectedDay = selectedDay;
+    selectedEvent.value.timeWindow = timeWindow;
+    selectedEvent.value.scheduleColumn = scheduleColumn;
+  }
+  showEventModal.value = true;
+  console.log('selectedEvent', selectedEvent);
+}
+
+function closeEventModal() {
+  showEventModal.value = false;
 }
 </script>
 
@@ -375,27 +386,7 @@ export default {
 
 <style scoped lang="scss">
 @import 'bootstrap/dist/css/bootstrap.css';
-
-$COLOR_PRIMARY: #ffffff;
-$COLOR_PRIMARY_MUTED: lighten($COLOR_PRIMARY, 20%);
-$COLOR_PRIMARY_MUTED_MUTED: lighten($COLOR_PRIMARY, 40%);
-$COLOR_FOREGROUND: rgba(#ffffff, 15%);
-$COLOR_BORDER: rgba(#ffffff, 30%);
-$COLOR_LIGHT_TEXT: white;
-$COLOR_FOCUS: rgba(38, 143, 255, 0.35);
-$COLOR_SHADOW: rgba(117, 84, 84, 0.4);
-$BORDER_RADIUS: 1rem;
-
-$COLOR_MAIN_EVENT: #ba6541;
-$COLOR_MAIN_EVENT_BORDER: darken($COLOR_MAIN_EVENT, 30%);
-$COLOR_WORKSHOP: #324a79;
-$COLOR_WORKSHOP_BORDER: darken($COLOR_WORKSHOP, 15%);
-$COLOR_MINI_EVENT: #962c30;
-$COLOR_MINI_EVENT_BORDER: darken($COLOR_MINI_EVENT, 15%);
-$COLOR_SPONSOR: #71341c;
-$COLOR_SPONSOR_BORDER: darken($COLOR_SPONSOR, 15%);
-$COLOR_FOOD: #4ea4d0;
-$COLOR_FOOD_BORDER: darken($COLOR_FOOD, 30%);
+@import '../assets/css/schedule.scss';
 
 .section-title {
   text-align: center;
@@ -409,11 +400,10 @@ $COLOR_FOOD_BORDER: darken($COLOR_FOOD, 30%);
   border-radius: $BORDER_RADIUS;
 }
 .schedule-header {
-  /* background-color: $COLOR_PRIMARY_MUTED; */
   font-family: Aleo;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: #324a79;
+  background-color: #10274f;
 }
 .schedule-header-day {
   display: flex;
@@ -421,9 +411,6 @@ $COLOR_FOOD_BORDER: darken($COLOR_FOOD, 30%);
   align-items: center;
   padding: 1rem;
   cursor: pointer;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
-  /* background-color: #324a79; */
 
   & .schedule-day {
     text-align: center;
@@ -520,6 +507,7 @@ $COLOR_FOOD_BORDER: darken($COLOR_FOOD, 30%);
   border: 2px solid $COLOR_BORDER;
   border-radius: 8px;
   color: $COLOR_LIGHT_TEXT;
+  cursor: pointer;
 }
 .length-30-min,
 .length-45-min {
