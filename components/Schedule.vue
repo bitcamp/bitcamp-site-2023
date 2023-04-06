@@ -108,6 +108,9 @@
             </div>
           </div>
         </div>
+        <div v-else>
+          <p style="text-align: center">Schedule loading...</p>
+        </div>
       </div>
     </div>
   </div>
@@ -463,6 +466,8 @@ export default {
 .schedule-list {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
