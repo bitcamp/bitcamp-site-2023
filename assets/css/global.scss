@@ -10,6 +10,7 @@ body {
   color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  padding-right: 0 !important; // Remove padding-right for vue-final-modal
 }
 
 h1,
