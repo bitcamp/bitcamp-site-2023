@@ -165,6 +165,12 @@ const displayTimeWindows = computed(() => {
       break;
     }
   }
+
+  // Hacky fix to prevent events starting at 12am from starting at the schedule bottom
+  endCutoff -= 1;
+  if (selectedDay.value == days.value[days.value.length - 1]) {
+    endCutoff = 32; // 4PM
+  }
   return timeWindows.value.concat(newTimes).slice(startCutoff, endCutoff);
 });
 
