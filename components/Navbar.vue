@@ -144,18 +144,26 @@ $bitcamp: var(--color-bitcamp);
 $mango: var(--color-mango);
 
 header {
-  margin: 0;
   z-index: 1;
   position: relative;
   padding: 1.5%;
   border: 0;
-  width: 100%;
-  background-color: #10274f;
+  // margin: 0;
+  // background-color: #10274f;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: #21498e80;
+  backdrop-filter: blur(35px);
+  box-shadow: inset 18rem 0 5rem -5rem #21498e88;
+  transition: box-shadow 0.3s ease;
+}
+
+header:hover {
+  box-shadow: inset 22rem 0 5rem -5rem #21498e;
 }
 
 nav {
   position: relative;
-  margin: 0vw;
   font-family: Aleo;
 }
 
@@ -325,6 +333,17 @@ nav {
     flex-direction: column;
     align-self: flex-start;
     margin: 0;
+  }
+
+  header {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #10274f;
+  }
+
+  header:hover {
+    box-shadow: none;
   }
 
   non-pages {
