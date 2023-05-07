@@ -2,8 +2,8 @@
 <template>
   <div id="schedule" class="section">
     <h1 class="section-title">Schedule</h1>
-    <div class="schedule-page" style="height: 80vh">
-      <div class="row schedule-list" style="height: 75vh">
+    <div class="schedule-page" style="height: 85vh">
+      <div class="schedule-list" style="height: 80vh">
         <!-- FULL SCHEDULE -->
         <div v-if="dataLoaded" class="col pl-5" style="min-height: 0">
           <div no-body class="card h-100">
@@ -401,7 +401,9 @@ export default {
 @import '../assets/css/schedule.scss';
 
 .section {
+  position: relative;
   width: 100%;
+  z-index: 10;
 }
 .section-title {
   text-align: center;
@@ -425,6 +427,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  padding-bottom: 0.75rem;
   cursor: pointer;
 
   & .schedule-day {
@@ -453,6 +456,7 @@ export default {
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  backdrop-filter: blur(35px);
 }
 .column-card {
   display: flex;
@@ -469,8 +473,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding: 0 1rem;
   width: 100%;
 }
 .schedule-legend {

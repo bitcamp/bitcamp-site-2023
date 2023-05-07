@@ -138,6 +138,6 @@ img {
   position: absolute;
   right: 0;
   width: 80vw;
-  margin-top: -10vw;
+  margin-top: -14vw;
 }
 </style>
