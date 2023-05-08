@@ -147,7 +147,7 @@ header {
   margin: 0;
   z-index: 1;
   position: relative;
-  padding: 1.5%;
+  padding: 0.5% 1.5%;
   border: 0;
   width: 100%;
   background-color: #10274f;
@@ -320,6 +320,10 @@ nav {
 }
 
 @media only screen and (max-width: 992px) {
+  header {
+    padding: 1.5%;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
