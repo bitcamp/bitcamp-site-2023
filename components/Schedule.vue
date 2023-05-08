@@ -3,7 +3,7 @@
   <div id="schedule" class="section">
     <h1 class="section-title">Schedule</h1>
     <div class="schedule-page" style="height: 85vh">
-      <div class="schedule-list" style="height: 80vh">
+      <div class="row schedule-list" style="height: 80vh">
         <!-- FULL SCHEDULE -->
         <div v-if="dataLoaded" class="col pl-5" style="min-height: 0">
           <div no-body class="card h-100">
@@ -472,6 +472,7 @@ export default {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin: 0;
   margin-top: 1rem;
   padding: 0 1rem;
   width: 100%;
